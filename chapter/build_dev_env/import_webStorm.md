@@ -41,3 +41,28 @@ File -> settings -> System Settings -> Synchronization -> Use "safe write"(save 
 
 c DONE  Compiled successfully in 556ms
 ```
+
+## 小技巧 - 预定义一个Vue文件模版
+.vue 文件中一般都是以下三个模版内容。所以我们把它设置为文件模版。就可以省略每次都敲这些固定的模版了。
+```javascript
+<template>
+
+</template>
+
+<script>
+
+</script>
+
+<style lang="less">
+
+</style>
+```
+在以下界面中新增一个模版。
+```
+File -> Settings -> Editor -> File and Code Templates
+```
+设置如下图：
+![](/assets/image/414344CED59ADD904753A6833A6920AC.jpg)
+
+在新建文件的时候选择我们已经配置好的 Vue File项。
+
