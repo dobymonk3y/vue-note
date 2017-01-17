@@ -34,11 +34,11 @@ $ vue init webpack vue-webpack-demo
 ? Setup unit tests with Karma + Mocha? No
 ? Setup e2e tests with Nightwatch? No
 
-   vue-cli · Generated "vue-webpack-demo2".
+   vue-cli · Generated "vue-webpack-demo".
 
    To get started:
 
-     cd vue-webpack-demo2
+     cd vue-webpack-demo
      npm install
      npm run dev
 
@@ -54,3 +54,13 @@ $ vue init webpack vue-webpack-demo
 ? Pick an ESLint preset Standard // 直接回车
 
 ```
+初始化完成之后，按照上面的提示方法：
+```bash
+To get started:
+
+cd vue-webpack-demo
+npm install
+npm run dev
+```
+进行依赖安装，然后开启运行模式。npm run dev 运行成功后，会在自动开启一个浏览器窗口。并监听vue模块的修改，且自动刷新浏览器窗口。
+
