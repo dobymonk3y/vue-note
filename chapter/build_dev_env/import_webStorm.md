@@ -14,4 +14,6 @@ export default
 
 ## 项目运行
 Run -> Edit Configurations -> + -> npm 
-选择npm后，会出现一个配置界面，如下图选择
+选择npm后，会出现一个配置界面，如下图选择![](/assets/image/B7B5568901C17601B6792A5C178434E5.jpg)
+
+保存配置后，就会在Run菜单中出现 你的配置。选择并运行Run 'npm_run'
