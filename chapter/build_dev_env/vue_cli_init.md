@@ -49,7 +49,7 @@ $ vue init webpack vue-webpack-demo
 ? Project description A Vue.js project 
 ? Author zhuqiang <zhuqiang@tidebuy.net>
 ? Vue build standalone  
-? Use ESLint to lint your code? Yes //是应用eslint语法检查，强制根据配置规则进行检查语法
+? Use ESLint to lint your code? Yes //ESLint是一个QA工具，用来避免低级错误和统一代码的风格。
 ? Pick an ESLint preset Standard // 直接回车
 
 ```
