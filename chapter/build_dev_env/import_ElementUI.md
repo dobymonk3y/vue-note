@@ -14,3 +14,22 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
 ``` 
+## 引入less
+使用less来编写css样式
+官方:
+* https://github.com/webpack/less-loader
+* http://lesscss.cn/
+
+
+1. 安装：
+```bash
+npm install --save-dev less-loader less
+```
+需要注意上面的命令，一次性安装了2个，单独安装less-loader。在运行时会报错的。
+
+2. 使用
+在.vue style 中声明; 不然不会起作用
+```javasrcipt
+<style lang="less">
+```
+
