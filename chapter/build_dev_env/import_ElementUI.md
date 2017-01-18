@@ -29,7 +29,7 @@ npm install --save-dev less-loader less
 
 2. 使用
 在.vue style 中声明; 不然不会起作用
-```javasrcipt
+```javascript
 <style lang="less">
 ```
 
