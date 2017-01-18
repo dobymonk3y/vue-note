@@ -7,7 +7,7 @@
 直接打开项目根目录，导入ok。
 
 随意打开一个.vue文件.一般会报错。在报错的地方使用Alt+回车 选择更换成es6语法。
-```javasrcipt
+```javascript
 <script>
 export default
 ```

@@ -4,21 +4,16 @@
   "language": "zh-hans",
    "plugins": [
        "splitter",
-       "emphasize",
        "github",
-       "-toggle-chapters",
        "prism",
        "-highlight",
-       "-toc",
-       "atoc",
-       "-anchor-navigation",
-       "-codeblock-filename" ,
-       "-sectionx",
-       "anchors",
-       "-github-buttons",
-       "-book-summary-scroll-position-saver",
+       "-tbfed-pagefooter",
+       "expandable-chapters",
+	   "anchors",
+       "anchor-navigation-ex",
        "tbfed-pagefooter",
-       "expandable-chapters"  
+       "advanced-emoji",
+	   "bootstrap-callout"
     ],
   "pluginsConfig": {
     "prism": {
@@ -45,14 +40,8 @@
         "modify_label": "该文件修订时间：",
         "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
-    "toc": {
-        "addClass": true,
-        "className": "toc"
-    },
-    "atoc": {
-        "addClass": true,
-        "className": "atoc"
-    },
-    "expandable-chapters":{}
+	"anchor-navigation-ex":{
+		"isRewritePageTitle":true
+	}
   }
 } 
