@@ -22,6 +22,9 @@ npm install axios --dev
         console.log(error);
       });
 ```
+`then`: 请求回来后会调用该方法
+`catch` : 请求错误 包括 在 then 中处理抛出异常 都会在这里回调
+
 ### post 使用示例：
 ```javascript
  import axiosfrom 'axios';
