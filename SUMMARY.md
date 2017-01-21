@@ -8,4 +8,6 @@
     * [使用WebStorm开发](chapter/build_dev_env/import_webStorm.md)
     * [准备工作](chapter/build_dev_env/import_ElementUI.md)
     * [使用vue-router](chapter/build_dev_env/vue_router.md)
+* [axios 请求器](chapter/axios.md)
+
 
