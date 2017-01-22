@@ -68,7 +68,7 @@ export default router;
 1. 路由的路径，在一个路由入口实例（包括嵌套子路由）里面的路径是唯一的，且配置按照从上倒下的顺序查找
 2. 嵌套子路由：
 
-```bash
+```javascript
 --- 组件A -------          在组件A里面点击路径 /home.那么组件A中的router-view被渲染成 home组件的内容
 |<router-view>  |          --- 组件 home----
 |               |          |<router-view>  |    在组件home里面想要跳转到 home的 router-view
