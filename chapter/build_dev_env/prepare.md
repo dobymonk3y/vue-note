@@ -4,7 +4,8 @@
 ## 引入ElementUI
 
 为了节约时间。使用ElementUI - Vue2 来布局和使用他的一些样式组件
-[ElementUI使用](../element_ui.md)
+
+[ElementUI使用教程](../element_ui.md)
 
 
 ## 引入less
@@ -26,29 +27,11 @@ npm install --save-dev less-loader less
 <style lang="less">
 ```
 
-## 开始写主页布局
-..... 省略
-
-## 左侧菜单路由切换
-
 
 ## 配置 axios 请求资源
-https://github.com/mzabriskie/axios
-安装
-```bash
-npm install axios --dev
-```
-使用示例：
-```javascript
- import Axios from 'axios';
-  Axios.get('/api/test/list')
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-```
+
+[axios使用教程](../axios.md)
+
 
 ## 配置开发环境的跨域代理
 https://github.com/chimurai/http-proxy-middleware
