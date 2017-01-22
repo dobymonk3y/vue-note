@@ -4,14 +4,13 @@
 
 
 一个简单的Store
-http://vuex.vuejs.org/zh-cn/getting-started.html
-```javascript
+> 参考文档：http://vuex.vuejs.org/zh-cn/getting-started.html
 
-// 如果在模块化构建系统中，请确保在开头调用了 Vue.use(Vuex)
+```javascript
 
 import Vue from 'vue';
 import Vuex from 'vuex';
-Vue.use(Vuex);
+Vue.use(Vuex); // 在模块化构建系统中，确保在开头调用了 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
