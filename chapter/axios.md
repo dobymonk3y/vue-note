@@ -2,7 +2,7 @@
 https://github.com/mzabriskie/axios
 安装
 ```bash
-npm install axios --dev
+npm i axios -S
 ```
 
 ## 请求方式

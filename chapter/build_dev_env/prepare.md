@@ -23,6 +23,7 @@ npm install --save-dev less-loader less
 
 2. 使用
 在.vue style 中声明; 不然不会起作用。注意：lang 和 rel
+
 ```javascript
 <style lang="less" rel="stylesheet/less" scoped>
 
