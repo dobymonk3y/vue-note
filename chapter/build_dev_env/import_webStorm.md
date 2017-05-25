@@ -31,7 +31,11 @@ Run -> Edit Configurations -> + -> npm
 有些版本的WebStorm没有打开EsLint的选项。需要经过以下方式打开：
 ![](/assets/image/eslint-config.png)
 
-打开以后的最明显的效果就是：以上的默认规则是 不需要分号的。 使用代码格式化后，会自动把分号都去掉！！听说在官网规则中有小工具图标的都能自动按规则修复。
+## 分号
+打开以后的最明显的效果就是：以上的默认规则是 不需要分号的。 使用代码格式化后，会自动把分号都去掉！！听说在官网规则中有小扳手图标的都能自动按规则修复。
+
+## 缩进两个空格
+![](/assets/image/缩进2格设置.png)
 
 ## 热加载
 热加载配置在`build/dev-server.js`文件中定义的。相关配置是`devMiddleware`,`hotMiddleware` 相关的。
