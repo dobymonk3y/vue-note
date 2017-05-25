@@ -20,6 +20,19 @@ Run -> Edit Configurations -> + -> npm
 
 保存配置后，就会在Run菜单中出现 你的配置。选择并运行Run 'npm_run'
 
+## EsLint 设置
+在`.eslintrc.js` 中继承了 该规则 https://github.com/feross/standard/blob/master/docs/RULES-zhcn.md
+
+```javascript
+  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
+  extends: 'standard',
+```
+
+有些版本的WebStorm没有打开EsLint的选项。需要经过以下方式打开：
+![](/assets/image/eslint-config.png)
+
+打开以后的最明显的效果就是：以上的默认规则是 不需要分号的。 使用代码格式化后，会自动把分号都去掉！！听说在官网规则中有小工具图标的都能自动按规则修复。
+
 ## 热加载
 热加载配置在`build/dev-server.js`文件中定义的。相关配置是`devMiddleware`,`hotMiddleware` 相关的。
 
