@@ -22,9 +22,11 @@ npm install --save-dev less-loader less
 需要注意上面的命令，一次性安装了2个，单独安装less-loader。在运行时会报错的。
 
 2. 使用
-在.vue style 中声明; 不然不会起作用
+在.vue style 中声明; 不然不会起作用。注意：lang 和 rel
 ```javascript
-<style lang="less">
+<style lang="less" rel="stylesheet/less" scoped>
+
+</style>
 ```
 
 
