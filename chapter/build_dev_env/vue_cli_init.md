@@ -44,7 +44,7 @@ $ vue init webpack vue-webpack-demo
 ```bash
 ? Project name vue-webpack-demo        
 ? Project description A Vue.js project 
-? Author zhuqiang <zhuqiang@tidebuy.net>
+? Author zhuqiang <zhuqiang@xxx.net>
 ? Vue build standalone  
 ? Use ESLint to lint your code? Yes //ESLint是一个QA工具，用来避免低级错误和统一代码的风格。
 ? Pick an ESLint preset Standard // 直接回车
