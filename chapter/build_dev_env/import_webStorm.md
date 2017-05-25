@@ -46,14 +46,18 @@ File -> settings -> System Settings -> Synchronization -> Use "safe write"(save 
 .vue 文件中一般都是以下三个模版内容。所以我们把它设置为文件模版。就可以省略每次都敲这些固定的模版了。
 ```javascript
 <template>
-
+    <p> template </p>
 </template>
 
 <script>
-
+  export default {
+      data () {
+         return {};
+      }
+  };
 </script>
 
-<style lang="less">
+<style lang="less" rel="stylesheet/less" scoped>
 
 </style>
 ```
