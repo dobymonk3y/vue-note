@@ -20,14 +20,11 @@ $ vue list
 ```bash
 $ vue init webpack vue-webpack-demo
 
-  This will install Vue 2.x version of the template.
-
-  For Vue 1.x use: vue init webpack#1.0 vue-webpack-demo2
-
 ? Project name vue-webpack-demo
 ? Project description A Vue.js project
-? Author zhuqiang <zhuqiang@tidebuy.net>
+? Author zhuqiang <zhuqiang@xxx.net>
 ? Vue build standalone
+? Install vue-router? Yes
 ? Use ESLint to lint your code? Yes
 ? Pick an ESLint preset Standard
 ? Setup unit tests with Karma + Mocha? No
