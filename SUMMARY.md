@@ -9,6 +9,7 @@
     * [使用vue-router](chapter/build_dev_env/vue_router.md)
 * [Axios 请求器](chapter/axios.md)
 * [ElementUi](chapter/element_ui.md)
+   - [NavMenu 导航菜单动态渲染](chapter/element_ui/nav_menu_ex.md) 
 
 
 
