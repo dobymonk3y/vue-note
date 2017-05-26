@@ -42,42 +42,5 @@ et -c ./src/comm/style/element-ui/element-variables.css -o ./src/comm/style/elem
 
 # 使用中遇到的坑和技巧
 
-## NavMenu 导航菜单动态渲染 
-在文档中没有找到怎么只给数据然后渲染出菜单来。经过摸索后，稍微封装了下。
-思路如下：
-1. 观察SubMenu，Menu-Item，Menu-Group 使用方式和所需要的数据，然后定制数据结构
-2. 通过分解组件加 v-if 进行判断组装
 
-代码如下：
-ElMenuItemEx.vue
-```
-<template>
-  <el-menu-item v-if="menu.type == 'item' && menu.route " :index="menu.index" :route="menu.route">
-    <template v-if="menu.route.type == 'inner'">
-      <i :class="menu.icon"></i>{{ menu.lable }}
-    </template>
-    <template v-if="menu.route.type == 'out'">
-      <i :class="menu.icon"></i><a :href="menu.route.path" target="_blank">{{ menu.lable }}</a>
-    </template>
-  </el-menu-item>
-</template>
-
-<script>
-  export default {
-    name: 'el-menu-item-ex',
-    props: {
-      menu: {
-        type: Object
-      }
-    },
-    data () {
-      return {}
-    }
-  }
-</script>
-<style lang="less" rel="stylesheet/less">
-
-</style>
-
-```
 
