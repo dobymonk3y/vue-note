@@ -14,8 +14,6 @@
     - [环境搭建](chapter/m/build_dev_env.md)
     - [准备工作](chapter/m/prepare.md)
 
-    npm i stylus-loader stylus --save
-
 
 
 
