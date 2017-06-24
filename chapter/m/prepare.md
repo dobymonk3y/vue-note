@@ -10,3 +10,7 @@ npm i stylus-loader stylus --save
 <style scoped lang="stylus" rel="stylesheet/stylus">
 </style>
 ```
+
+接下来介绍一点常用的规范css
+### variable.styl
+变量，整体风格颜色，字体大小设置
