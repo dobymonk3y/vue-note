@@ -51,4 +51,5 @@ new Vue({
 
 ```
 
-可以看出来。两种模式下的挂载方式不一样，runtime 使用 render。而 standalone 使用 template加components
+可以看出来。两种模式下的挂载方式不一样，runtime 使用 render。而 standalone 使用 template加components；
+经过测试：这两种模式对于白屏问题 都不受该猜想的影响。
