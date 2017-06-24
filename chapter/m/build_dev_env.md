@@ -37,6 +37,8 @@ new Vue({
   router,
   render: h => h(App)
 })
+
+// 上面的 render: h => h(App) 中的h是createElement函数，是es6的简写语法
 ```
 
 这是 standalone 模式下生成的代码
