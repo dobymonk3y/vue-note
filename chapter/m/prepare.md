@@ -3,7 +3,7 @@
 ## 使用stylus编写css
 先安装，记得安装loader和原本的stylus库
 ```bash
-npm i stylus-loader stylus --save
+npm i stylus-loader stylus --dev
 ```
 安装完成之后的vue模版中的写法如下
 ```css
