@@ -14,3 +14,16 @@ npm i stylus-loader stylus --save
 接下来介绍一点常用的规范css
 ### variable.styl
 变量，整体风格颜色，字体大小设置
+### reset.styl
+重置风格，业内有统一的css。
+### base.styl
+基础的css
+### icon.styl
+图标css
+### index.styl
+入口引用 
+```css
+@import "./reset.styl"
+@import "./base.styl"
+@import "./icon.styl"
+```
