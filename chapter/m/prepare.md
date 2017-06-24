@@ -35,3 +35,12 @@ stylus 函数，在使用到的地方引入
 ```javascript
 import 'common/stylus/index.styl'
 ```
+
+在vue模版中的style中使用的话如下：
+```css
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "common/stylus/variable"
+  #app
+    color : $color-sub-theme
+</style>
+```
