@@ -25,3 +25,5 @@ $ vue init webpack vue-music
 
    Documentation can be found at https://vuejs-templates.github.io/webpack
 ```
+
+初始化完成之后，按照上面的提示，进行install和run dev 就能看到浏览器中的页面了。这里不得不说的是：在360急速浏览器中使用 IE11模式，打开该项目白屏，改成急速模式的话正常，而且可以在ios原生浏览器中打开。（以前做的项目不知道是什么原因，不能在ios中打开）
