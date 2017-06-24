@@ -50,3 +50,5 @@ new Vue({
 })
 
 ```
+
+可以看出来。两种模式下的挂载方式不一样，runtime 使用 render。而 standalone 使用 template加components
