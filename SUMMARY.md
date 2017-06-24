@@ -10,6 +10,8 @@
 * [Axios 请求器](chapter/axios.md)
 * [ElementUi](chapter/element_ui.md)
    - [NavMenu 导航菜单动态渲染](chapter/element_ui/nav_menu_ex.md) 
+* [vue移动端开发](chapter/m/README.md)
+
 
 
 
