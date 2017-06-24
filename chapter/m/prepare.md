@@ -28,4 +28,4 @@ npm i stylus-loader stylus --save
 @import "./icon.styl"
 ```
 ### mixin.styl
-stylus 函数
+stylus 函数，在使用到的地方引入
