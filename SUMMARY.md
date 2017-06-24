@@ -12,7 +12,9 @@
    - [NavMenu 导航菜单动态渲染](chapter/element_ui/nav_menu_ex.md) 
 * [vue移动端开发](chapter/m/README.md)
     - [环境搭建](chapter/m/build_dev_env.md)
+    - [准备工作](chapter/m/prepare.md)
 
+    npm i stylus-loader stylus --save
 
 
 
