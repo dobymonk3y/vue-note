@@ -27,3 +27,5 @@ npm i stylus-loader stylus --save
 @import "./base.styl"
 @import "./icon.styl"
 ```
+### mixin.styl
+stylus 函数
