@@ -29,3 +29,9 @@ npm i stylus-loader stylus --save
 ```
 ### mixin.styl
 stylus 函数，在使用到的地方引入
+
+
+基础的css文件准备好后，在main.js中引入该css
+```javascript
+import 'common/stylus/index.styl'
+```
