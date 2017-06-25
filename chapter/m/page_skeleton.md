@@ -54,3 +54,6 @@ fastclick.attach(document.body)  // 解决移动端点击延迟300毫秒
 ## header 组件的开发
 先根据页面结构，把最顶端的header组件开发出来
 
+## tab 导航切换组件的开发
+切换不同的tab，把下面对应的内容跳转到具体的页面
+
