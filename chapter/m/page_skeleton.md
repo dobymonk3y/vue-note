@@ -51,3 +51,6 @@ fastclick.attach(document.body)  // 解决移动端点击延迟300毫秒
 在main.js中加入是因为该项目是spa单页应用，这里设置在body上，body下的所有点击事件都被处理了。
 ```
 
+## header 组件的开发
+先根据页面结构，把最顶端的header组件开发出来
+
