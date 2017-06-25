@@ -25,7 +25,7 @@ npm i jsonp -S
 
 因为很多地方都会用到，所以适当的进行工具类的封装
 ```javascript
-import originJSONP from '~jsonp'
+import originJSONP from 'jsonp'
 
 export default function jsonp (url, data, option) {
   // 需要判断url后面是否有问号
