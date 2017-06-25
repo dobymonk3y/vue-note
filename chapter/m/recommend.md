@@ -19,6 +19,8 @@ https://github.com/webmodules/jsonp
 
 把该库安装到项目中
 ```bash
+npm i jsonp -S
+
 ```
 
 因为很多地方都会用到，所以适当的进行工具类的封装
