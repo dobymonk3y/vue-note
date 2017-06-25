@@ -36,3 +36,11 @@ $ npm install -save-dev babel-polyfill
 ```bash
 "fastclick": "^1.0.6"
 ```
+使用如下：在main.js中加入如下代码
+```javascript
+import fastclick from 'fastclick'
+fastclick.attach(document.body)  // 解决移动端点击延迟300毫秒
+
+在main.js中加入是因为该项目是spa单页应用，这里设置在body上，body下的所有点击事件都被处理了。
+```
+
