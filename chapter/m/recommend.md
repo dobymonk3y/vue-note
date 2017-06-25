@@ -9,6 +9,20 @@
 
 视频中是jsonp访问的。而我看的时候获取到的是同源访问，那么联想到视频中抓去到请求参数`jsonpCallback=jsonp1`,尝试加了该参数，访问的数据就是以json1{xxx} 的形式返回的了。很厉害，一个接口支持所有的格式返回
 
+
+注意：在抓包获取接口的时候，有可能会遇到特殊处理的比如；pc站的qq音乐的歌单列表
+```
+https://y.qq.com/portal/playlist.html#t2=5&
+上面是站点页面，下面是歌单列表地址，直接请求都显示无法显示网页，但是刷新页面能看到。这样的就是做了一些特殊处理的。
+https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg?rnd=0.8914799780923608&g_tk=5381&jsonpCallback=getPlaylist&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&categoryId=10000000&sortId=5&sin=0&ein=29
+```
+
+下面搜集一些处理方式：
+### 比如上面的请求链接
+```
+在请求头里面有一个属性： referer:https://y.qq.com/portal/playlist.html
+```
+
 ## jsonp
 https://github.com/webmodules/jsonp
 
