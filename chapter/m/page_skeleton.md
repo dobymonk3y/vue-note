@@ -18,3 +18,9 @@
 ```bash
 $ npm install -save-dev babel-polyfill
 ```
+
+### FastClick
+处理移动端 click 事件 300 毫秒延迟， 由 FT Labs 开发，Github 项目地址：https://github.com/ftlabs/fastclick 。
+```bash
+"fastclick": "^1.0.6"
+```
