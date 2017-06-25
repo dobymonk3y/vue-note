@@ -26,6 +26,29 @@ referer:https://y.qq.com/portal/playlist.html
 该字段暂时无法处理的。使用开发环境的代理功 + axios 设置请求头来模拟正确的请求头
 ```
 
+在配置文件dev-server.js中的express
+```javascript
+var apiRoutes = express.Router()
+
+apiRoutes.get('/getDiscList', function (req, res) {
+  var url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
+  axios.get(url, {
+    headers: {
+      referer: 'https://c.y.qq.com/',
+      host: 'c.y.qq.com'
+    },
+    params: req.query
+  }).then((response) => {
+    res.json(response.data)
+  }).catch((e) => {
+    console.log(e)
+  })
+})
+// 最后使用/api 前缀拦截请求
+app.use('/api', apiRoutes)
+```
+
+
 
 ## jsonp
 https://github.com/webmodules/jsonp
