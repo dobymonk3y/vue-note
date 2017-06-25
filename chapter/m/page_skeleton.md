@@ -20,7 +20,13 @@ $ npm install -save-dev babel-polyfill
 ```
 
 ### babel-runtime
-适合库和框架，针对使用到的新API 会提出打包到 build 文件中。
+`babel-polyfill` 与 `babel-runtime` 是两个概念
+
+`babel-polyfill` 是对浏览器缺失API的支持。比如浏览器可能没有`Array.from()` 方法。
+
+`babel-runtime` 是为了减少重复代码而生的。 babel生成的代码，可能会用到一些_`extend()`， `classCallCheck()` 之类的工具函数，默认情况下，这些工具函数的代码会包含在编译后的文件中。如果存在多个文件，那每个文件都有可能含有一份重复的代码。
+`babel-runtime`插件能够将这些工具函数的代码转换成`require`语句，指向为对`babel-runtime`的引用，如 `require('babel-runtime/helpers/classCallCheck')`. 这样， `classCallCheck`的代码就不需要在每个文件中都存在了。
+当然，最终你需要利用`webpack`之类的打包工具，将`runtime`代码打包到目标文件中。
 ```bash
 "babel-runtime": "^6.0.0"
 ```
