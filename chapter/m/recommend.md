@@ -28,6 +28,7 @@ referer:https://y.qq.com/portal/playlist.html
 
 在配置文件dev-server.js中的express
 ```javascript
+var axios = require('axios')
 var apiRoutes = express.Router()
 
 apiRoutes.get('/getDiscList', function (req, res) {
@@ -37,14 +38,14 @@ apiRoutes.get('/getDiscList', function (req, res) {
       referer: 'https://c.y.qq.com/',
       host: 'c.y.qq.com'
     },
-    params: req.query
+    params: req.query    // 代理到的查询参数
   }).then((response) => {
-    res.json(response.data)
+    res.json(response.data)   // 代理获取后返回的res
   }).catch((e) => {
     console.log(e)
   })
 })
-// 最后使用/api 前缀拦截请求
+
 app.use('/api', apiRoutes)
 
 在调用的时候，就不是jsonp请求了，而是一个普通的ajax请求了。
