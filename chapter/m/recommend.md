@@ -57,3 +57,10 @@ function param (data) {
 1. 先把需要抓去的数据拿到
 2. 按照页面一个一个来解决
 3. 先解决轮播图，编写轮播图的基础组件 base/slider
+
+### 轮播图实现
+需要依赖 https://github.com/ustbhuangyi/better-scroll 库，移动端的滑动库？
+```bash
+npm i better-scroll -S
+
+```
