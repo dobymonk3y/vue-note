@@ -23,7 +23,7 @@ https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg?rnd=0.8914799780923
 在请求头里面有1个属性： 
 referer:https://y.qq.com/portal/playlist.html
 
-该字段暂时无法处理的。使用axios的代理功能来绕过
+该字段暂时无法处理的。使用开发环境的代理功 + axios 设置请求头来模拟正确的请求头
 ```
 
 
