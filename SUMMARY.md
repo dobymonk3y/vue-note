@@ -13,6 +13,20 @@
 * [vue移动端开发](chapter/m/README.md)
     - [环境搭建](chapter/m/build_dev_env.md)
     - [准备工作](chapter/m/prepare.md)
+    - [页面骨架搭建](chapter/m/page_skeleton.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
