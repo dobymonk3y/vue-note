@@ -9,6 +9,8 @@
 ## 增加的依赖项
 babel的使用参考 http://www.ruanyifeng.com/blog/2016/01/babel.html
 
+下面的polyfill和babel-runtime 的安装 和 `.babelrc`中的'transform-runtime' 我看文档好像有这个插件就不用再自己转了，会自己去做转换的。 -------------------？这个有待验证
+
 ### babel-polyfill插件
 Babel默认只转换新的`JavaScript句法（syntax）`，而不转换新的API，比如`Iterator`、`Generator`、`Set`、`Maps`、`Proxy`、`Reflect`、`Symbol`、`Promise`等全局对象，以及一些定义在全局对象上的方法（比如`Object.assign`）都不会转码。
 举例来说，ES6在`Array`对象上新增了`Array.from`方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用`babel-polyfill`，为当前环境提供一个垫片。详细清单可以查看 `babel-plugin-transform-runtime`模块的[definitions.js](https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-runtime/src/definitions.js) 文件
