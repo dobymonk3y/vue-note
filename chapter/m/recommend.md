@@ -20,7 +20,8 @@ https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg?rnd=0.8914799780923
 下面搜集一些处理方式：
 ### 比如上面的请求链接
 ```
-在请求头里面有一个属性： referer:https://y.qq.com/portal/playlist.html
+在请求头里面有几个属性： 
+referer:https://y.qq.com/portal/playlist.html
 ```
 
 ## jsonp
