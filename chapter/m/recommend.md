@@ -5,6 +5,7 @@
 1. xhr 是ajax请求
 2. js 是获取的一些js文件，也包括跨域数据，这就要说道jsop原理了
 
+这次获取到的是该地址返回的页面所需要的数据：`https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&_=1498359279556`
 ## jsonp
 https://github.com/webmodules/jsonp
 
