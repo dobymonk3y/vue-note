@@ -46,6 +46,8 @@ apiRoutes.get('/getDiscList', function (req, res) {
 })
 // 最后使用/api 前缀拦截请求
 app.use('/api', apiRoutes)
+
+在调用的时候，就不是jsonp请求了，而是一个普通的ajax请求了。
 ```
 
 
