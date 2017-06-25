@@ -21,6 +21,11 @@ Babel默认只转换新的`JavaScript句法（syntax）`，而不转换新的API
 $ npm install -save-dev babel-polyfill
 ```
 
+使用方法，在入口文件最上层引入
+```javascript
+import 'babel-polyfill'  // es6 到 es5 的补丁转换
+```
+
 ### babel-runtime
 `babel-polyfill` 与 `babel-runtime` 是两个概念
 
