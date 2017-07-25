@@ -15,6 +15,9 @@
   * [准备工作](chapter/m/prepare.md)
   * [页面骨架搭建](chapter/m/page_skeleton.md)
   * [推荐页面+jsonp获取数据](chapter/m/recommend.md)
+  
+* [vue组件库开发]](chapter/vu_components_lib/README.md)
+
 
 
 
