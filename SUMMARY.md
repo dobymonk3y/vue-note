@@ -17,6 +17,12 @@
   * [推荐页面+jsonp获取数据](chapter/m/recommend.md)
   
 * [vue组件库开发](chapter/vu_components_lib/README.md)
+  - [环境搭建](chapter/vu_components_lib/build_dev_env.md)
+
+
+
+
+
 
 
 
