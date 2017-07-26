@@ -16,7 +16,8 @@ src/components/Hello.vue
 ```javascript
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
+    <h3>{{ msg }}</h3>
     <ul>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
@@ -28,6 +29,9 @@ src/components/Hello.vue
 
 <script>
   export default {
+    props: {
+      title: String
+    },
     data () {
       return {
         msg: 'hello word'
