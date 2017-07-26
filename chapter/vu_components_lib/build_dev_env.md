@@ -2,7 +2,7 @@
 本地预览环境用于开发组件的时候 实时预览和调试；
 目录如下：
 ```bash
-|- root                     # 项目根目录(项目名)
+|- rootxx                   # 项目根目录(项目名)
     |- examples             # 用于本地预览开发
         |- assets
         |- components
