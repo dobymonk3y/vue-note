@@ -7,5 +7,16 @@
 ```bash
 |- root                     # 项目根目录(项目名)
     |- examples             # 用于本地预览开发
+        |- assets
+        |- components
+        |- router
+        |- App.vue
+        |- index.html
+        |- main.js
     |- src                  # 用于组件开发   
 ```
+* examples目录： 看上面的目录结构，其实就是把原先在src下生成的目录拷贝过来了，我们的思路就是 换了一个文件夹而已。用来写测试开发。
+
+* src目录：用来开发通用组件的代码
+
+
