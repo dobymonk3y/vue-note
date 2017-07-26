@@ -116,3 +116,10 @@ export default Object.assign(VueComponentsLib, {install})
 // module.exports = Object.assign(tlzVueElUi, {install})   // eslint-disable-line no-undef
 
 ```
+
+这个测试方法如下：
+在examples/main.js中添加如下代码
+```javascript
+import VueComponentsLib from '../src/index'
+Vue.use(VueComponentsLib)
+```
