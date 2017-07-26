@@ -136,3 +136,10 @@ Vue.use(VueComponentsLib)
     env: require('./prod.lib.env.js'),
   }
 ```
+**config/prod.lib.env.js**
+```javascript
+module.exports = {
+  NODE_ENV: '"prodlib"'
+}
+
+```
