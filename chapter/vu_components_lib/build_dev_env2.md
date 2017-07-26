@@ -124,3 +124,8 @@ import VueComponentsLib from '../src/index'
 Vue.use(VueComponentsLib)
 ```
 好了，这个被全局安装了，至于按需安装的话，我就没有研究了，后台系统全局安装能满足我的需求了。
+
+## 打包成js
+我看百度有直接把vue打包出去的。这个方法不知道有用没有，打包成js的话，说得最多的是，在非vue-cli环境下也能使用。或许在vue-cli环境下直接使用这里的 .vue文件的组件也是可以的把？
+
+
