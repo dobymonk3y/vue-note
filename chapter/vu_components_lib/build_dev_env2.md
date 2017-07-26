@@ -123,3 +123,4 @@ export default Object.assign(VueComponentsLib, {install})
 import VueComponentsLib from '../src/index'
 Vue.use(VueComponentsLib)
 ```
+好了，这个被全局安装了，至于按需安装的话，我就没有研究了，后台系统全局安装能满足我的需求了。
