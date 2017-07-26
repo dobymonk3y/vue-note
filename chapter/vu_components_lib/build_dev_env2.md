@@ -7,12 +7,15 @@
 | - rootxxx                 # 项目根目录（项目名）
     |- src                  # 用于组件开发,vue-li默认生成的目录
         |- components       # 我们所有的组件都放在这个里面 
+          |- hello          # hello组件目录
+            |-Hello.vue     
+            |-index.js      # 模块化暴露文件
 ```
 
 本次只配置组件打包和使用，其他的需求以后再慢慢深入了解
 
 ## 编写第一个组件
-src/components/Hello.vue
+**src/components/hello/Hello.vue**
 ```javascript
 <template>
   <div class="hello">
@@ -62,4 +65,9 @@ src/components/Hello.vue
   }
 </style>
 
+```
+**src/components/hello/index.js**
+```javascript
+import Hello from './Hello'
+export default Hello
 ```
