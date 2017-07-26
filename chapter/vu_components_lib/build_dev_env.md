@@ -267,3 +267,7 @@ exports.assetsPath = function (_path) {
 ```
 
 最后：我们运行 npm run dev:examples 就能看到久违的开发环境了，热更新也有效果。
+
+## 组件环境搭建
+
+
