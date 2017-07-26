@@ -209,18 +209,20 @@ module.exports = merge(baseWebpackConfig, {
   // 输出
   // 覆盖基础配置里面的输出，把输出的目录定义到 examples/dist目录下
   output: {
+    // 原生的配置里面是引用的 build里面的 config.build.assetsRoot
     path: path.join(__dirname, '../examples/dist'),
-    publicPath: '',
     filename: '[name].js',
     chunkFilename: '[name].chunk.js'
   },
   module: {
-    rules: utils.styleLoaders({sourceMap: config.dev.cssSourceMap})
+    // cssSourceMap 的配置也需要更改为我们新增的配置
+    rules: utils.styleLoaders({sourceMap: config.examplesDev.cssSourceMap})
   },
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
+      // 环境定义也需要修改为我们定义的配置
       'process.env': config.examplesDev.env
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
@@ -228,6 +230,11 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+      // 这里原生的默认配置都是 index.html 
+      // 我尝试了一下，两个都更改为/examples/index.html的话，不能正常显示
+      // 百度了一下：template是模版文件，指定到新的目录下的index.html 配置是没有错的
+      // filename : 输出的文件，原生默认配置里面的没有看懂为什么可以，但是这里写一样的就不行
+      // 可能必须写到上面output.path的输出目录中去才可以吧
       filename: path.join(__dirname, '../examples/dist/index.html'),
       template: path.join(__dirname, '../examples/index.html'),
       inject: true
