@@ -375,3 +375,5 @@ npm run build:prodLib --report
 // import VueComponentsLib from '../src/index'
 import VueComponentsLib from '../lib/vueComponentsLib.min.js'
 ```
+
+最终成功
