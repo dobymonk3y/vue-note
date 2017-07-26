@@ -15,7 +15,7 @@
 
 - 开发环境和vue-cli默认生成的配置类似
 - 不同的是 组件的打包，要打包成js文件 和 css文件。
-- 发布到npm的内容是.npmignore 和 packgpackage.json决定的
+- 发布到npm的内容是.npmignore 和 package.json决定的
 
 以上几点明白了。就可以尝试搭建了;
 
