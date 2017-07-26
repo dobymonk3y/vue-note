@@ -243,3 +243,27 @@ module.exports = merge(baseWebpackConfig, {
   ]
 })
 ```
+
+上面的文件中都用到了build/utils.js工具类里面也有一些基于环境变量做出的配置；
+
+其他的配置还有和环境变量相关的，但是并不是特别的重要，就不列出来了
+```javascript
+// 最主要修改的是 这里的路径，按照环境变量判定
+exports.assetsPath = function (_path) {
+  let nodeenv = process.env.NODE_ENV
+  var assetsSubDirectory = ''
+  switch (nodeenv){
+    case 'development':
+      assetsSubDirectory = config.dev.assetsSubDirectory
+      break
+    case 'production':
+      assetsSubDirectory = config.build.assetsSubDirectory
+      break
+    default:
+      assetsSubDirectory = config.examplesDev.assetsSubDirectory
+  }
+  return path.posix.join(assetsSubDirectory, _path)
+}
+```
+
+最后：我们运行 npm run dev:examples 就能看到久违的开发环境了，热更新也有效果。
