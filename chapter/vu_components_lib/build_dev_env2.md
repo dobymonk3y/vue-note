@@ -128,4 +128,11 @@ Vue.use(VueComponentsLib)
 ## 打包成js
 我看百度有直接把vue打包出去的。这个方法不知道有用没有，打包成js的话，说得最多的是，在非vue-cli环境下也能使用。或许在vue-cli环境下直接使用这里的 .vue文件的组件也是可以的把？
 
-
+首先呢，同本地预览的思路差不多，我们先增加基础的配置
+**config/index.js**
+在以前的基础上增加一个配置环境，不过这里暂时还不知道需要哪些变量配置，因为直接打成js包和webapp包还不一样
+```javascript
+  buildProdLib:{
+    env: require('./prod.lib.env.js'),
+  }
+```
