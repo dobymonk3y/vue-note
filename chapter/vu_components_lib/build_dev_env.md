@@ -20,5 +20,15 @@
 * src目录：用来开发通用组件的代码
 
 ### 修改配置文件
+由于我们只是把文件目录更换了，尝试模仿原生的配置来写一下；
+config/index.js
+```javascript
+# 直接拷贝dev的代码
+module.exports = {
+    build:{...},  // vue-cli默认配置
+    dev:{...},  // vue-cli默认配置
+    examplesDev:{..}  // 我们模仿dev来写一套配置，直接copydev的配置过来
+}
+```
 
 
