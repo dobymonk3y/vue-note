@@ -120,7 +120,9 @@ export default Object.assign(VueComponentsLib, {install})
 ```
 
 这个测试方法如下：
+
 在examples/main.js中添加如下代码
+
 ```javascript
 import VueComponentsLib from '../src/index'
 Vue.use(VueComponentsLib)
@@ -160,6 +162,7 @@ module.exports = {
 ```
 
 **build/buildProdLib.js**
+
 复制了一份build/build.js来修改。
 这个文件是启动构建并显示构建后的文件大小。就和原生构建web应用时的效果一样
 ```javascript
@@ -206,6 +209,7 @@ rm(path.join(config.buildProdLib.assetsRoot), err => {
 })
 
 ```
+
 **build/webpack.prodLib.conf.js**
 ```javascript
 var path = require('path')
@@ -351,7 +355,9 @@ module.exports = webpackConfig
 
 ```
 文件就配置完成了，补充下在修改文件配置的时候增加的配置变量
+
 **config/index.js**
+
 打包环境的配置变量如下
 ```javascript
   buildProdLib: {
