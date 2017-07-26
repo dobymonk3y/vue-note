@@ -27,8 +27,30 @@ config/index.js
 module.exports = {
     build:{...},  // vue-cli默认配置
     dev:{...},  // vue-cli默认配置
-    examplesDev:{..}  // 我们模仿dev来写一套配置，直接copydev的配置过来
+    // 我们模仿dev来写一套配置，直接copydev的配置过来
+    examplesDev:{
+        env: require('./examples.dev.env'),   // 这里环境变量配置更改为我们新增的
+        port: 8080,
+        autoOpenBrowser: true,
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
+        proxyTable: {},
+        // CSS Sourcemaps off by default because relative paths are "buggy"
+        // with this option, according to the CSS-Loader README
+        // (https://github.com/webpack/css-loader#sourcemaps)
+        // In our experience, they generally work as expected,
+        // just be aware of this issue when enabling this option.
+        cssSourceMap: false
+    } 
 }
+```
+
+config/examples.dev.env.js
+```javascript
+module.exports = {
+  NODE_ENV: '"examples"'
+}
+
 ```
 
 
