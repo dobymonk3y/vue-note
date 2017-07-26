@@ -18,4 +18,7 @@
 * [vue组件库开发](chapter/vu_components_lib/README.md)
   * [环境搭建-本地预览开发环境](chapter/vu_components_lib/build_dev_env.md)
   * [环境搭建-组件打包环境](chapter/vu_components_lib/build_dev_env2.md)
+  * [环境搭建-单独css打包配置](chapter/vu_components_lib/build_dev_env_css.md)
+
+
 

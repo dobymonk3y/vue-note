@@ -388,4 +388,12 @@ npm run build:prodLib --report
 import VueComponentsLib from '../lib/vueComponentsLib.min.js'
 ```
 
-最终成功
+最终成功；
+
+然后有一个问题就是，我们写组件库的话，css怎么办？参考了各大开源框架，一般都不会把css写在vue组件里面，也不能使用scoped。因为方便使用者覆盖样式。
+
+那么我们的接下来要做的就是，单独使用css文件样式，然后单独打包css文件。
+
+
+下一章节：环境搭建-单独css打包配置
+
