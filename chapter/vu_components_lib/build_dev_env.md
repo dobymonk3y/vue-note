@@ -192,11 +192,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 var path = require('path');
 
-
+// 原生的配置文件只考虑了 打包成web应用的开发和发布，他们是同一个目录
+// 所以这里我要定义 不同的目录，就要先覆盖baseWebpackConfig里面的入口文件和输出目录
 let entry = {
   app: './examples/main.js'
 }
 // add hot-reload related code to entry chunks
+// 这里是热加载的配置
+// 下面的代码作用完成之后把入口文件修改成了一个数组 app: [ './build/dev-client', './examples/main.js' ]
 Object.keys(entry).forEach(function (name) {
   entry[name] = ['./build/dev-client'].concat(entry[name])
 })
@@ -204,6 +207,7 @@ Object.keys(entry).forEach(function (name) {
 module.exports = merge(baseWebpackConfig, {
   entry: entry,
   // 输出
+  // 覆盖基础配置里面的输出，把输出的目录定义到 examples/dist目录下
   output: {
     path: path.join(__dirname, '../examples/dist'),
     publicPath: '',
