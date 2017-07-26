@@ -368,3 +368,10 @@ npm run build:prodLib --report
 构建完成后生成`lib/vueComponentsLib.min.js` 文件
 
 ## 使用打包后的js文件进行测试
+在开发测试环境测试
+**examples/main.js**
+```
+# 把直接引用的js替换成打包好的js
+// import VueComponentsLib from '../src/index'
+import VueComponentsLib from '../lib/vueComponentsLib.min.js'
+```
