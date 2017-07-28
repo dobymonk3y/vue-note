@@ -14,16 +14,19 @@ module.exports = {
   }
 }
 ```
-**
-本次配置需要添加以下几个依赖项**
+
+**本次配置需要添加以下几个依赖项**
+
+
 ```jacascript
   "devDependencies": {
     ...
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^3.7.0",
-    "gulp-stylus": "^2.6.0",
     "gulp-rename": "^1.2.2",
+    // 由于我们这次采用stylus来作为css的预处理器，所以要增加stylus相关的预处理器
+    "gulp-stylus": "^2.6.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   }
