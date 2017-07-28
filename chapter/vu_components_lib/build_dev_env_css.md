@@ -17,7 +17,6 @@ module.exports = {
 
 **本次配置需要添加以下几个依赖项**
 
-
 ```jacascript
   "devDependencies": {
     ...
@@ -27,8 +26,22 @@ module.exports = {
     "gulp-rename": "^1.2.2",
     // 由于我们这次采用stylus来作为css的预处理器，所以要增加stylus相关的预处理器
     "gulp-stylus": "^2.6.0",
+    // 这里的是之前没有说道的，用于测试预览环境中vue文件中可以写stylus代码需要安装的处理器
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   }
+```
+
+**package.json**
+增加命令入口
+```jacascript
+  "scripts": {
+    ...
+   "build:prodStyl": "gulp --gulpfile build/buildProdStyl.js",
+```
+
+**build/buildProdStyl.js**
+编写打包的配置文件
+```jacascript
 ```
 
