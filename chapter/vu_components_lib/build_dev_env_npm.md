@@ -5,6 +5,7 @@ package.json 中我们需要关注的应该是以下几个属性
 
 - version : 1.0.0        # 版本号，每次发布不能重复
 - dependencies ：{}      # 依赖的库，vue-cli默认安装的因为我们需要调试所以安装的时候使用了 vue-router，但是打包的时候不需要，所以这个应该移动到devDependencies中去，只是开发的时候测试使用   
+- "main": "lib/vueComponentsLib.min.js" 相当于组件库的默认index.js入口配置
 
 **.npmignore**
 决定哪些文件被忽略不发布到npm中去。下图中参考饿了吗ui的把一些不必要的文件给忽略掉
