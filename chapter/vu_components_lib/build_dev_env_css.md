@@ -102,5 +102,20 @@ module.exports = {
 }
 ```
 
+## 打包测试
+```bash
+npm run build:prodStyl
+```
+## 引用测试
+在main.js中引入此css文件。
+
+**examples/main.js**
+```jacascript
+import VueComponentsLib from '../lib/vueComponentsLib.min.js'
+import '../lib/styl/vueComponentsLib.min.css'
+
+Vue.use(VueComponentsLib)
+```
+
 
 
