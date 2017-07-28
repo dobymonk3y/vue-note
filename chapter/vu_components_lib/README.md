@@ -19,5 +19,8 @@
 
 以上几点明白了。就可以尝试搭建了;
 
+**该分支是本教程一步一步实践之后最终成品：**（master会逐步的把一些不需要的代码给去掉，最后形成真正的种子环境项目）
+https://github.com/zq99299/vue-components-lib-dev-env/tree/tutorials
+
 
 
