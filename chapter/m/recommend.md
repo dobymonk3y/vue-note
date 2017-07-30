@@ -103,10 +103,18 @@ function param (data) {
 3. 先解决轮播图，编写轮播图的基础组件 base/slider
 4. 然后解决推荐列表
 5. 发现整个页面没法滚动，封装bas/scroll组件
+6. 页面优化
 
 [轮播图组件](/chapter/m/recommend/slider.md) 
 轮播图搞定之后，发现列表滚动条不了，我们想整轮播图和推荐列表一起被滚动，然后就开始封装滚动组件
 [滚动条组件](/chapter/m/recommend/scroll.md)
+
+页面搞定之后，发现美中不足，有大量的图片被加载，但是我们首屏只有几张图片，图片加载能否进行懒加载呢？
+
+### 图片懒加载
+https://github.com/hilongjw/vue-lazyload
+
+开源库能解决这个问题，滚动到可视化区域的时候才加载图片
 
 
 
