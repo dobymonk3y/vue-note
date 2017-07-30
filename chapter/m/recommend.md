@@ -407,5 +407,10 @@ npm i better-scroll -S
 
 2. 如果里面有图片的话，图片会下载，下载完成之后高度才会被撑开。所以图片加载也需要刷新
 
+  ```
+  // 给图片添加load事件，然后再该事件中
+  <img @load="loadImage" :src="item.picUrl">
+  ```
+
 
 
