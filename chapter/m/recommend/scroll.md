@@ -91,7 +91,8 @@
   ```
 3. 将轮播图和列表套在一个scroll中，发现轮播图的点击事件没有了，和scroll的click冲突，被scroll覆盖
   ```
-  // 将要触发点击事件的元素上面增加 class="needsclick"， 则会触发点击事件了
+  // scroll的点击事件覆盖了这里的点击跳转事件，增加 class="needsclick" 来解决
+  // class="needsclick" ： 是  fastclick 提供的，也可以作用在任意元素上
     <img class="needsclick" @load="loadImage" :src="item.picUrl">
   ```  
 
