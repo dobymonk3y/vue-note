@@ -114,7 +114,21 @@ function param (data) {
 ### 图片懒加载
 https://github.com/hilongjw/vue-lazyload
 
-开源库能解决这个问题，滚动到可视化区域的时候才加载图片
+开源库能解决这个问题，滚动到可视化区域的时候才加载图片；
+使用方式:
+首选全局安装，且全局配置（可以仔细查看文档配置）
+```javascript
+import vueLazyload from 'vue-lazyload'
+
+Vue.use(vueLazyload, {
+  // 加载中显示的图片
+  loading: require('common/image/default.png')
+})
+```
+```html
+// 在要懒加载的图片上使用 v-lazy指令
+<img width="60" height="60" v-lazy="item.imgurl"/>
+```
 
 
 
