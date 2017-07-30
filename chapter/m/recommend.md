@@ -101,8 +101,12 @@ function param (data) {
 1. 先把需要抓去的数据拿到
 2. 按照页面一个一个来解决
 3. 先解决轮播图，编写轮播图的基础组件 base/slider
+4. 然后解决推荐列表
+5. 发现整个页面没法滚动，封装bas/scroll组件
 
-
+[轮播图组件](/chapter/m/recommend/slider.md) 
+轮播图搞定之后，发现列表滚动条不了，我们想整轮播图和推荐列表一起被滚动，然后就开始封装滚动组件
+[滚动条组件](/chapter/m/recommend/scroll.md)
 
 
 
