@@ -5,7 +5,14 @@
 npm i better-scroll -S
 
 ```
-better-scroll 的前提条件：父容器高度必须固定，由子元素撑开内容
+better-scroll 的前提条件：父容器高度必须固定，由子元素撑开内容，所以在页面布局的时候，使用了fixed布局（这一块可视化区域固定不动，由子元素的内容撑开，超过父元素高度的时候就有了滚动）
+```css
+  .singer
+    position: fixed
+    top: 88px
+    bottom: 0
+    width: 100%
+```
 
 ```html
 <template>
