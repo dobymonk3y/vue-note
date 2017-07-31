@@ -5,6 +5,8 @@
 npm i better-scroll -S
 
 ```
+better-scroll 的前提条件：父容器高度必须固定，由子元素撑开内容
+
 ```html
 <template>
   <div class="slider" ref="slider">
