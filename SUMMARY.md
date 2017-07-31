@@ -17,7 +17,7 @@
   * [推荐页面+jsonp获取数据](chapter/m/recommend.md)
     - [轮播图组件slider](chapter/m/recommend/slider.md)
     - [滚动条组件scroll](chapter/m/recommend/scroll.md)
-  * [歌手页面](chapter/m/recommend.md)
+  * [歌手页面](chapter/m/singer.md)
 
 * [vue组件库开发](chapter/vu_components_lib/README.md)
   - [环境搭建-本地预览开发环境](chapter/vu_components_lib/build_dev_env.md)
