@@ -133,4 +133,14 @@ Vue.use(vueLazyload, {
 ```
 
 
+### loading组件
+这个组件就不贴代码了，因为实在是太低级了。还需要自己在外部写css样式
 
+不过这个垂直居中效果还可以记录下
+```css
+  .loading-container
+    position: absolute
+    width: 100%
+    top: 50%
+    transform: translateY(-50%)
+```
