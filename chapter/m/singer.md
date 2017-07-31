@@ -39,3 +39,67 @@ https://y.gtimg.cn/music/photo_new/T001R150x150M000002J4UUk29y8BY.jpg?max_age=25
 
 看出来了吗？T001R150x150M000002J4UUk29y8BY.jpg 这一串中的002J4UUk29y8BY和返回的信息里面的Fsinger_mid字段一样，由此可见图片地址是拼接而成的。
 ```
+
+请求数据得到了，但是，这个返回的数据并不符合我们页面设计的需求，需要加工一下
+```javascript
+      /**
+       * 规范化歌手数据；
+       * 原因：
+       * api直接获取到的不符合我们的页面逻辑的数据
+       * 我们的列表是一个按字母列表分组的数据
+       * 所以要按字母分组聚合
+       * @param list
+       * @private
+       */
+      _normalizeSinger (list) {
+        let map = {
+          // 热门数据取前10
+          hot: {
+            title: HOT_NAME,
+            items: []
+          }
+        }
+        list.forEach((item, index) => {
+          if (index < HOT_SINGER_LEN) {
+            map.hot.items.push(new Singer({
+              id: item.Fsinger_id,
+              name: item.Fsinger_name,
+              mid: item.Fsinger_mid
+            }))
+          }
+          // 按 index的字母聚合数据
+          const key = item.Findex
+          if (!map[key]) {
+            map[key] = {
+              title: key,
+              items: []
+            }
+          }
+          map[key].items.push(new Singer({
+            id: item.Fsinger_id,
+            name: item.Fsinger_name,
+            mid: item.Fsinger_mid
+          }))
+        })
+        // 为了得到有序列表，我们需要处理 map
+        let hot = []
+        let ret = []
+        for (let key in map) {
+          let val = map[key]
+          // 如果是字母的话就提取出来，因为还看到map中还有数字的index，这个数据是不需要的
+          if (val.title.match(/[a-zA-Z]/)) {
+            ret.push(val)
+          } else if (val.title === HOT_NAME) {
+            hot.push(val)
+          }
+        }
+        // 升序排序
+        ret.sort((a, b) => {
+          // 得到字母的charcode 然后对比
+          return a.title.charCodeAt(0) - b.title.charCodeAt(0)
+        })
+        // 再把两个数组链接起来,合并成一个
+        return hot.concat(ret)
+      }
+    }
+```
