@@ -200,13 +200,55 @@ this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
 ## 右侧快速入口 滑动列表滚动到指定的title处
 
 需求：在快如入口上滑动，变滑动边滚动到对应的title处
-思路：
+难点：
+
 1. 滑动事件
 2. 怎么滚动到对应的元素去（也就是怎么计算出需要滚动到哪一个算所索引）
   
 基础知识：
 
- 1.  
+1. @touchmove.stop.prevent="onShortcutTouchMove" h5滑动事件，.stop.prevent,vue提供的阻止事件冒泡，因为我们的左侧区域也是有滑动，因为能滚动列表
+2. e.touches[0].pageY : 开始触摸处的像素，从0开始，网上滑动5px，则值为-5px，往下滑动5px，值为 5 px
+
+ok上面已经科普完毕：
+思路：
+
+1. 引入滑动事件
+2. 在滑动起始点（也就是触摸点击事件中）记录这个y点的值
+3. 在滑动过程中，再次获取这个y点的值，然后y2-y1 就能知道滚动了多长的距离像素
+4. 只要知道一个 字母所在的item元素高度(18)，使用滑动的距离/18，就能知道滑动了几个dom元素
+5. 在滑动起始点，还要记录起始点元素的索引，然后使用这个索引 + 第4步骤计算出来滑动的dom元素个数，就能得到当前滚动到的dom元素索引
+
+```
+ // H5 的触摸开始事件
+      onShortcutTouchStart (el) {
+        // 获取到起始点的y值
+        let firstTouch = el.touches[0]
+        this.touch.y1 = firstTouch.pageY
+
+        // 拿到dom元素在列表中的索引
+        let anchorIndex = getData(el.target, 'index')
+        if (anchorIndex) {
+          this.touch.anchorIndex = anchorIndex
+          this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
+        }
+      },
+      onShortcutTouchMove (e) {
+        let firstTouch = e.touches[0]
+        this.touch.y2 = firstTouch.pageY
+        // y 轴上的偏移像素
+        let delta = this.touch.y2 - this.touch.y1
+        // 得到有几个元素
+        delta = delta / ANCHOR_HEIGHT
+        // 取整
+        delta = delta | 0
+        let anchorIndex = (parseInt(this.touch.anchorIndex) + delta)
+        this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
+        console.log(delta, anchorIndex)
+      }
+```
+
+    
 
 
 
