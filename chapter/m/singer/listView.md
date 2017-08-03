@@ -234,6 +234,7 @@ ok上面已经科普完毕：
         }
       },
       onShortcutTouchMove (e) {
+		// 滑动过程中再次拿到滑动的距离起点的偏移值，往上滑动是负数，往下滑动是正数
         let firstTouch = e.touches[0]
         this.touch.y2 = firstTouch.pageY
         // y 轴上的偏移像素
@@ -242,6 +243,8 @@ ok上面已经科普完毕：
         delta = delta / ANCHOR_HEIGHT
         // 取整
         delta = delta | 0
+		// 然后使用 起点的元素索引，加上滚动的元素个数（因为是上滑的话，得到的值是负数）
+		// 假设起点是5，往上滑动-36px个，delta = -2， 5+-2 = 3;所以滚动到的元素索引是正确的
         let anchorIndex = (parseInt(this.touch.anchorIndex) + delta)
         this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
         console.log(delta, anchorIndex)
