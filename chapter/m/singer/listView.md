@@ -195,3 +195,7 @@ this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
 这里有组件帮我们做了滚动的操作，那么就怎么找到我们需要滚动到的目标dom元素呢？
 
 这个时候我们想一想，快速列表入口和左侧的列表数据的对应关系是什么？他们的group的标题顺序是一致的，那么我可以通过获取点击的快速列表入口dom元素所在列表中的索引从而找到左侧dom元素所在列表中的索引。 然后我们再给每个group的dom元素一个相同的标识（这里是ref），多个相同的ref组成一个列表，获取列表中指定索引的dom元素，再调用bscroll的scrollToElement就达到了滚动到具体的可视区域
+
+
+
+
