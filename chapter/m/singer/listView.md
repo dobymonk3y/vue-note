@@ -180,3 +180,18 @@ export function getData (el, name, val) {
 
 通过上面的源码可以看到，我们获取触发事件中的dom元素上的'data-index' 属性（在遍历的时候设置在每一个入口文字上的），如果有，就表示需要左侧的内容需要滚动到对应的区域。
 
+然而我们调用了bscroll的一个方法，滚动到指定的元素；
+```javascript
+this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
+
+----scroll.vue 代理了一个bscroll的方法-----
+      // 滚动到列表中指定的dom元素位置
+      scrollToElement () {
+//        this.scroll.scrollToElement(el) 在参数中定义el，和下面的效果一样
+        this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
+      }
+```
+
+这里有组件帮我们做了滚动的操作，那么就怎么找到我们需要滚动到的目标dom元素呢？
+
+这个时候我们想一想，快速列表入口和左侧的列表数据的对应关系是什么？他们的group的标题顺序是一致的，那么我可以通过获取点击的快速列表入口dom元素所在列表中的索引从而找到左侧dom元素所在列表中的索引。 然后我们再给每个group的dom元素一个相同的标识（这里是ref），多个相同的ref组成一个列表，获取列表中指定索引的dom元素，再调用bscroll的scrollToElement就达到了滚动到具体的可视区域
