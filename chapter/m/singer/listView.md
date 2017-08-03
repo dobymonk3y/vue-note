@@ -128,3 +128,53 @@
       }
     }
 ```
+
+## 右侧快速入口 点击让列表滚动到指定的title处
+
+我们来分析下这个需求有哪些关键点
+
+1. 快速入口中的每一个title都需要有一个点击事件
+2. 让左侧的歌手列表滚动到相应的title处
+
+我们先来解决第一个：点击事件,将h5的触摸事件设置在快速入口的元素上，@touchstart，
+
+```html
+<div class="list-shortcut" @touchstart="onShortcutTouchStart">
+      <ul>
+        <li class="item" v-for="(item,index) in shortcutList"
+            :data-index="index">{{ item }}
+        </li>
+      </ul>
+    </div>
+```
+那么这个元素中的任何一个元素被触摸的时候都会触发该事件。所以这里就有一个问题，怎么才能捕获到只触摸文字的时候（也就是class=item的时候）才触发滚动操作？
+```javascript
+    methods: {
+      // H5 的触摸开始事件
+      onShortcutTouchStart (el) {
+        // 拿到dom元素在列表中的索引
+        let anchorIndex = getData(el.target, 'index')
+        if(anchorIndex){
+          this.$refs.listview.scrollToElement(this.$refs.listgroup[anchorIndex])
+        }
+      }
+    },
+---- getData ----
+/**
+ * 获取dom 元素上的属性，data开头的属性，
+ * @param el
+ * @param name
+ * @param val 有值就设置，没有值就获取
+ * @returns {*}
+ */
+export function getData (el, name, val) {
+  const prefix = 'data-'
+  name = prefix + name
+  if (val) {
+    return el.setAttribute(name, val)
+  } else {
+    return el.getAttribute(name)
+  }
+}
+```
+
