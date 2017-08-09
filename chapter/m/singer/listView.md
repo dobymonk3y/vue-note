@@ -1,7 +1,5 @@
 # listView歌手列表联/系人列表
 
-![](/assets/musicapp/歌手列表快速列表样式.png)
-
 ## 第一个版本
 ![](/assets/musicapp/listView歌手列表联-系人列表.png)
 
@@ -252,6 +250,27 @@ ok上面已经科普完毕：
       }
 ```
 
+
+## 左侧滚动怎么触发右侧联动高亮对应的title呢？
+
+上面做了右侧滚动或则点击，让左侧定位到对应的块，现在左侧怎么联动右侧呢？
+
+思路：
+
+
+由于这个组件使用了 基础的 scroll组件，所以要扩展该基础组件的功能，增加监听滚动事件。
+
+bscroll的滚动事件除了下面的代码外，还需要切换probeType=2才会触发滚动的时候派发滚动事件
+
+```javascript
+        // 监听bscroll的滚动事件
+        if (this.listenScroll) {
+          console.log(this.scroll)
+          this.scroll.on('scroll', (pos) => {
+            this.$emit('scroll', pos)
+          })
+        }
+```
     
 
 
