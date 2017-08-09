@@ -1,5 +1,6 @@
-![](assets/musicapp/歌手列表快速列表样式.png)# listView歌手列表联/系人列表
+# listView歌手列表联/系人列表
 
+![](/assets/musicapp/歌手列表快速列表样式.png)
 
 ## 第一个版本
 ![](/assets/musicapp/listView歌手列表联-系人列表.png)
