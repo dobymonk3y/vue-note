@@ -56,10 +56,10 @@
       },
       // 下面代理几个比较常用的方法
       enable () {
-        this.scr && this.scroll.enable()
+        this.scroll && this.scroll.enable()
       },
       disable () {
-        this.scr && this.scroll.disable()
+        this.scroll && this.scroll.disable()
       },
       refresh () {
         this.scroll && this.scroll.refresh()
