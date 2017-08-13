@@ -252,6 +252,48 @@
 
   这样看起来效果是往上滚动的时候，group的标题框会把上一个悬浮框网上顶
 
+```html
+    <!--固定悬浮标题效果-->
+    <div class="list-fixed" ref="fixed">
+      <h1 class="fixed-title">{{ fixedTitle }}</h1>
+    </div>
+```
+重点部分
+```javascript
+    watch: {
+      // 根据滚动的高度计算当前滚动到的索引，然后利用索引就能得到右侧的索引元素
+      scrollY (newY) {
+        .....
+        let listHeight = this.listHeight
+        for (let i = 0; i < listHeight.length - 1; i++) {
+          if (!height2 || (y > height1 && y < height2)) {
+            this.currentIndex = i
+            .....
+
+            // 计算当前滚动的区域的下一个group的dom元素顶部 距离滚动容器顶部的距离
+            // 用来计算 过度效果的偏移像素
+            this.diff = height2 + newY
+            return
+          }
+        }
+        // 尾部区域
+        this.currentIndex = 0
+      },
+      diff (newDiff) {
+        // 在碰撞范围内，返回重叠的重叠的像素，一偏移，效果就像被碰撞走的
+        let fixedTop = (newDiff > 0 && newDiff < TITLE_HEIGHT) ? newDiff - TITLE_HEIGHT : 0
+
+        console.log('fixedTop:', fixedTop, 'newDiff:', newDiff)
+        // 当不在 TITLE_HEIGHT 范围内的时候，fixedTop 始终返回0.下面再把固定标题框移动到0的位置
+        // 且不再继续改变，只有在碰撞范围内，再继续碰撞的效果
+        if (this.fixedTop === fixedTop) {
+          return
+        }
+        console.log('---fixedTop:', fixedTop, 'newDiff:', newDiff)
+        this.fixedTop = fixedTop
+        this.$refs.fixed.style.transform = `translate3d(0,${fixedTop}px,0)`
+      }
+```
   
   
   
