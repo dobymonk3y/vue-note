@@ -188,6 +188,56 @@
 ## 左侧滚动时，怎么固定左侧的标题在顶部展示
 需求：左侧滚动的时候，需要当前区域的title固定在顶部（场景：如果左侧一个title的列表很多的时候，能知道当前title）
 
+![](/assets/musicapp/歌手列表组件固定标题悬浮效果.png)
+
+思路：
+
+1. 左侧和右侧滚动都需要变更顶部的文案，那么还是依赖之前算出来的currentIndex
+2. 悬浮效果呢？是一直有一个悬浮的框和列表组里面的框一样，一直悬浮在上面的（由于和列表组里面的一样，高度也一样，看起来就e很难玄妙）
+
+变动的代码如下
+```html
+    <!--固定悬浮标题效果,此代码位置就在列表代码同级-->
+    <div class="list-fixed">
+      <h1 class="fixed-title">{{ fixedTitle }}</h1>
+    </div>
+```
+```javascript
+    computed: {
+      // 固定标题悬浮效果 实时计算
+      fixedTitle () {
+        return this.data[this.currentIndex] ? this.data[this.currentIndex].title : ''
+      }
+    },
+```
+```css
+.list-fixed {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      .fixed-title {
+        font-size: 12px;
+        line-height: 30px;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, 0.5);
+        background: #333;
+      }
+    }
+```
+
+上面的效果实现之后，发现滚动到最顶部的时候，会出现两个一样的边框，上面说道的，这个边框标题一直都存在，所以要处理滚动到最顶部（往下拉，顶部会被往下拉出一定的距离，这个效果就出现了）的时候我们隐藏掉这个悬浮边框。
+```javascript
+      // 固定标题悬浮效果 实时计算
+      fixedTitle () {
+        if (this.scrollY >= 0) {
+          return ''
+        }
+        return this.data[this.currentIndex] ? this.data[this.currentIndex].title : ''
+      }
+```
+可以看到这里只是返回了空串，也能达到效果，是因为上面的css代码，高度是文字撑开的，当没有文字的时候，高度为0，就相当于隐藏了
+
 
 
   
