@@ -71,3 +71,22 @@
 ```
 
 上面跳转之后在地址栏呈现:`/singer/5062`
+
+## 给路由跳转增加跳转效果
+
+进入的时候，从右侧往左侧滑动，离开的时候从左侧(当前)滑动到右侧
+```html
+<transition name="slide">
+      <router-view></router-view>
+    </transition>
+```
+```css
+  // 进入和离开激活的时候添加过渡效果
+  .slide-enter-active, .slide-leave-active
+    transition all 0.3s
+
+ // 进入的时候，页面从100%(最右侧)过度到0；
+ // 离开的时候，从0过度到100%
+  .slide-enter, .slide-leave-to
+    transform translate3d(100%, 0, 0)
+```
