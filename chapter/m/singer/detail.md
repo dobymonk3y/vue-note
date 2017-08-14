@@ -81,15 +81,19 @@
     </transition>
 ```
 ```css
-  // 进入和离开激活的时候添加过渡效果
+
   .slide-enter-active, .slide-leave-active
     transition all 0.3s
 
- // 进入的时候，元素被添加  .slide-enter-active .slide-enter-to(然而这里to并没有添加任何效果)
- // 离开的时候，元素被添加 .slide-leave-active .slide-leave-to(当前页面的x轴就是0，过度到100%，再加上0.3的过度时间就有效果了）
- // 进入的时候 加上slide-enter，在路由进入的时候把页面重置到最右边
+  // 进入的时候 加上.slide-enter-active slide-enter，在路由进入的时候把页面重置到最右边，然后立即移除（100% -> 0 加0.3秒的过渡效果）
+ // 接着 过度效果结束的时候，元素被添加  .slide-enter-active .slide-enter-to(然而这里to并没有添加任何效果)，然后立即移除
+ // 离开开始时候元素被添加 .slide-leave-active .slide-leave（这里没有定义任何效果）
+ // 离开过渡效果结束的时候，元素被添加 .slide-leave-active .slide-leave-to(当前页面的x轴就是0，过度到100%，再加上0.3的过度时间就有效果了）
+ 
   .slide-enter, .slide-leave-to
     transform translate3d(100%, 0, 0)
 ```
 
-具体的 css 类名 查看官网教程：https://cn.vuejs.org/v2/guide/transitions.html
+具体的 css 类名 查看官网教程：https://cn.vuejs.org/v2/guide/transitions.html；
+上面的文字解说其实有点蒙，结合说明和自己手动把这两个css效果放到一个元素上，移除添加查看效果，然后再结合
+![](/assets/musicapp/listView歌手列表联-系人列表.png)
