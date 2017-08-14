@@ -9,3 +9,62 @@
 3. 下面是歌手的歌曲列表
     
     歌手列表可以滚动，但是当向下滚动的时候，需要把歌曲列表顶部往上移动一段距离，然后再固定住，滚动到最顶端的时候，需要还原成上图那样。
+    
+功能分析出来了，来讲一下大概的思路：
+
+1. 在歌手列表中使用子路由
+2. 歌手详情页在子路由中全屏渲染，z-index稍微大一点
+3. 路由路径中传递歌手id
+
+## 子路由配置
+
+**src/components/singer-detail/Singer-detail.vue 详情页面**
+```javascript
+<template>
+  <div class="singer-detail">
+      xxx
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+  export default {
+    data () {
+      return {}
+    }
+  }
+</script>
+
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "~common/stylus/variable"
+
+  .singer-detail
+    position fixed
+    z-index 100
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background $color-background
+</style>
+```
+
+**路由配置**
+
+这里注意看下，参数的用法
+```javascript
+ {
+      path: '/singer',
+      component: Singer,
+      children: [{
+        path: ':id',
+        component: SingerDetail
+      }]
+    }
+```
+
+**路由的跳转**
+```javascript
+    this.$router.push({
+      path: `/singer/${singer.id}`
+    })
+```
