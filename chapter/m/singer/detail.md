@@ -85,8 +85,9 @@
   .slide-enter-active, .slide-leave-active
     transition all 0.3s
 
- // 进入的时候，页面从100%(最右侧)过度到0；
- // 离开的时候，从0过度到100%
+ // 进入的时候，元素被添加  .slide-enter-active .slide-enter-to(然而这里to并没有添加任何效果)
+ // 离开的时候，元素被添加 .slide-leave-active .slide-leave-to(当前页面的x轴就是0，过度到100%，再加上0.3的过度时间就有效果了）
+ // 进入的时候 加上slide-enter，在路由进入的时候把页面重置到最右边
   .slide-enter, .slide-leave-to
     transform translate3d(100%, 0, 0)
 ```
