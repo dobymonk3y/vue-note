@@ -104,5 +104,5 @@
 enter -> enter-to : 100%，马上移除 -> 0 ,加上active的0.3秒过渡效果
 leave -> leave-to : 0 -> 100%（过度完成后被移除）
 
-简单的就理解为，
+官网文档解释说明：leave-to在leave开始时触发，也就是leave被移除时，leave-to被添加到元素上，过度效果被完成后，再移除
 
