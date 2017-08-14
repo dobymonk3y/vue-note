@@ -91,3 +91,5 @@
   .slide-enter, .slide-leave-to
     transform translate3d(100%, 0, 0)
 ```
+
+具体的 css 类名 查看官网教程：https://cn.vuejs.org/v2/guide/transitions.html
