@@ -37,5 +37,27 @@ const mutations = {
 
 export default mutations
 ```
+
+**src/store/mutations-types.js 把方法名提取出来，方便书写和引用**
+```javascript
+export const SET_SINGER = 'SET_SINGER'
+```
+
+**src/store/getters.js 定义获取数据的方法**
+```javascript
+/** 用于获取数据 */
+
+// es6 箭头表达式缩写
+export const singer = state => state.singer
+```
+```javascript
+// 上面的简写相当于这个下面这个
+export function singer2 (state) {
+return state.singer
+}
+```
+
+
+
 **src/store/action.js ： 暂时用不上**
 
