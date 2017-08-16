@@ -108,5 +108,17 @@ import xxx ：导出的数据结构是{x1,x2}
 
 ```
 
+## 把写好的注入到vue中
+src/main.js
+
+```javascript
+import store from './store'
+new Vue({
+  el: '#app',
+  router,
+  store,  // 这里注入
+  render: h => h(App)
+})
+```
 
 
