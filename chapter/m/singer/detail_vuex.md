@@ -14,3 +14,13 @@
     |- mutations-types.js # 常量字符串
     |- state.js           # 数据   
 ```
+**src/store/state.js 定义数据状态有哪些**
+```javascript
+const state = {
+  singer: {}
+}
+
+export default state
+```
+**src/store/action.js ： 暂时用不上**
+
