@@ -22,5 +22,20 @@ const state = {
 
 export default state
 ```
+
+**src/store/mutations.js 定义提交修改的方法**
+```javascript
+/** 用于提交 */
+
+import * as types from './mutations-types'
+
+const mutations = {
+  [types.SET_SINGER] (state, singer) {
+    state.singer = singer
+  }
+}
+
+export default mutations
+```
 **src/store/action.js ： 暂时用不上**
 
