@@ -147,7 +147,8 @@ new Vue({
   
   .......
       computed: {
-      ...mapGetters([
+      // 可以看到这个语法糖都是可以在任意一个方法里面使用的。
+      ...mapGetters(
         'singer'
       ])
     },
