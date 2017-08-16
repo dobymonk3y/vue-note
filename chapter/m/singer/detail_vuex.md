@@ -13,4 +13,4 @@
     |- mutations.js  # 提交数据操作
     |- mutations-types.js # 常量字符串
     |- state.js           # 数据   
-``
+```
