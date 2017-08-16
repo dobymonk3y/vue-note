@@ -57,7 +57,56 @@ return state.singer
 }
 ```
 
-
-
 **src/store/action.js ： 暂时用不上**
+
+**src/store/index.js 最后把分散的各个部分组装起来**
+
+```javascript
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+import * as actions from './action'
+import * as getters from './getters'
+import mutations from './mutations'
+import state from './state'
+
+// 开发模式下使用日志，和谷歌浏览器里面的vuedevtool插件类似
+// 子修改state的时候会在控制台打印一些信息
+import createLogger from 'vuex/dist/logger'
+
+Vue.use(Vuex)
+
+// 调试,开发模式开启严格模式，要使用mutations提交
+const debug = process.env.NODE_ENV !== 'production'
+
+export default new Vuex.Store({
+  actions,
+  getters,
+  state,
+  mutations,
+  strict: debug,
+  plugins: debug ? [createLogger()] : []
+})
+
+```
+
+注意：上面的文件中用到了 import * as actions的语法。
+
+**import * as xxx 和 import xxx 的区别是什么？**
+```javascript
+import * as xxx 和 import {xx,x2} : 不能用于export default xxx 导出的js文件，* as xxx 是表示把里面的都定义到一个容器 xxx下。而后面解构的变量名必须和文件中导出的一致
+import xxx ：只能用于 export default xxx 导出的js文件，且xxx可以和导出的变量名不一致。
+
+
+比如下面的
+const xx = {x1,x2}
+export default xx
+
+import * as xx : 导出的数据结构是 {default:{x1,x2}}
+import xxx ：导出的数据结构是{x1,x2}
+
+
+```
+
+
 
