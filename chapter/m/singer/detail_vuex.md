@@ -121,4 +121,38 @@ new Vue({
 })
 ```
 
+## 在应用中提交
+```javascript
+  // 语法糖，对mutations做了一层封装，减少代码量
+  import { mapMutations } from 'vuex'
+    export default {
+     ........
+     methods:{
+           // 映射，把mutations.js中定义的SET_SINGER映射成一个setSinger方法
+      ...mapMutations({
+        setSinger: 'SET_SINGER'
+      })
+     }
+    }
+    
+  --------------------
+  调用的时候 就和 平时普通的methods中的一致 this.setSinger(xxx)
+```
+
+## 在应用中获取
+```javascript
+
+  // 语法糖，也可以映射
+  import { mapGetters } from 'vuex'
+  
+  .......
+      computed: {
+      ...mapGetters([
+        'singer'
+      ])
+    },
+    created () {
+      console.log(this.singer)
+    }
+
 
