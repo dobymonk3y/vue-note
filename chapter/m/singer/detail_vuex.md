@@ -148,12 +148,27 @@ new Vue({
   .......
       computed: {
       // 可以看到这个语法糖都是可以在任意一个方法里面使用的。
-      ...mapGetters(
+      ...mapGetters([
         'singer'
       ])
     },
     created () {
       console.log(this.singer)
     }
+```
+然而这里又有疑问了，为什么mapMutations中用的{},这里要用[]呢？
+其实我尝试了下:用数组的等同于下面的。
+```javascript
+    computed: {
+      ...mapGetters({
+        'singer': 'singer'
+      })
+    },
+```
+
+原因是源码中他们的定义很像，都是(map: string[])，虽然我也看不懂完整的是什么意思
+```javascript
+export function mapMutations (map: string[]): Dictionary<MutationMethod>;
+export function mapGetters (map: string[]): Dictionary<() => any>;
 ```
 
