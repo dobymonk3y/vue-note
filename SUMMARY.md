@@ -21,6 +21,8 @@
     - [listView歌手列表联/系人列表](chapter/m/singer/listView.md)
     - [listView歌手列表联/系人列表 2](chapter/m/singer/listView2.md)
     - [歌手详情页](chapter/m/singer/detail.md)
+    - [歌手详情页-vuex](chapter/m/singer/detail_vuex.md)
+
 
 * [vue组件库开发](chapter/vu_components_lib/README.md)
   - [环境搭建-本地预览开发环境](chapter/vu_components_lib/build_dev_env.md)
