@@ -154,5 +154,5 @@ new Vue({
     created () {
       console.log(this.singer)
     }
-
+```
 
