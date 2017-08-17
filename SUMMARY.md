@@ -22,6 +22,10 @@
     - [listView歌手列表联/系人列表 2](chapter/m/singer/listView2.md)
     - [歌手详情页](chapter/m/singer/detail.md)
     - [歌手详情页-vuex](chapter/m/singer/detail_vuex.md)
+    - [歌手详情页-歌手列表数据抓取](chapter/m/singer/detail_getdata.md)
+
+
+
 
 
 * [vue组件库开发](chapter/vu_components_lib/README.md)
