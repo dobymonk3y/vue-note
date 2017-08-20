@@ -76,6 +76,7 @@ export function createSong (musicData) {
     id: musicData.songId,
     mid: musicData.songmid,
     singer: filterSinger(musicData.singer),
+    name: musicData.songname,
     album: musicData.albumname,
     duration: musicData.interval,  // 歌曲长度多少秒
     image: `https://y.gtimg.cn/music/photo_new/T002R300x300M000${musicData.albummid}.jpg?max_age=2592000`,
