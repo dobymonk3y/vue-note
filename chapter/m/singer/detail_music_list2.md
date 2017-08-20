@@ -30,3 +30,5 @@ scrollY (newY) {
           console.log(`translateY:`, translateY, `newY:`, newY)
         }
 ```
+
+## 下拉让图片有放大缩小的交互效果
