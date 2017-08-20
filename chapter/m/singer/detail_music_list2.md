@@ -31,4 +31,48 @@ scrollY (newY) {
         }
 ```
 
-## 下拉让图片有放大缩小的交互效果
+## 下拉让图片有放大缩小的交互效果和上拉高斯模糊
+![](/assets/musicapp/歌手详情歌曲列表交互效果图上拉ios高斯模糊.png)
+```javascript
+watch: {
+      scrollY (newY) {
+        let translateY = Math.max(this.minTranslateY, newY)
+        let zindex = 0
+        if (translateY === this.minTranslateY) {
+          let bgImageStyle = this.$refs.bgImage.style
+          bgImageStyle['padding-top'] = 0
+          bgImageStyle['height'] = `${RESERVED_HEIGHT}px`
+          zindex = 10
+          console.log(`  --- translateY:`, translateY, `newY:`, newY)
+        } else {
+          // 让背景层跟着网上移动
+          this.$refs.bgLayer.style['transform'] = `translate3d(0,${translateY}px,0)`
+          let bgImageStyle = this.$refs.bgImage.style
+          bgImageStyle['padding-top'] = `70%`
+          bgImageStyle['height'] = 0
+          zindex = 0
+          console.log(`translateY:`, translateY, `newY:`, newY, 'this.minTranslateY:', this.minTranslateY)
+        }
+
+        let percent = Math.abs(newY / this.bgImageHeight)
+        // 通过缩放来控制图片的大小
+        let scale = 1
+        let blur = 0
+        if (newY > 0) {
+          scale = 1 + percent
+          zindex = 10  // 解决在下拉的时候，图片虽然有放大缩小的效果，但是由于后来居上，覆盖了放大的显示部分
+        } else {
+          // 往上拉的时候，不能使用缩放了，因为图片可以放大，但是缩小的话，背景肯定铺不满容器了，很丑陋
+          // 那么实现一个高斯模糊的效果，越到顶部越模糊
+          blur = Math.min(20 * percent, 20) // 最大限制到20
+        }
+        // backdrop-filter 可能只有ios才能看到的高斯模糊效果
+        this.$refs.filter.style['backdrop-filter'] = `blur(${blur}px)`
+        this.$refs.filter.style['webkitBackdrop-filter'] = `blur(${blur}px)`
+        let bgImageStyle = this.$refs.bgImage.style
+        bgImageStyle['z-index'] = zindex
+        bgImageStyle['transform'] = `scale(${scale})`
+        bgImageStyle['webkitTransform'] = `scale(${scale})`
+      }
+    }
+```
