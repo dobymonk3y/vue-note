@@ -43,4 +43,33 @@
 </script>
 ```
 ```css
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "~common/stylus/variable"
+  @import "~common/stylus/mixin"
+
+  .song-list {
+    .item {
+      display: flex
+      height 64px
+      align-items center // 垂直居中（在高度64px中）
+      box-sizing border-box
+      font-size $font-size-medium
+      .content {
+        flex 1
+        line-height 20px
+        overflow hidden
+        .name {
+          no-wrap()
+          color $color-text
+        }
+        .desc {
+          no-wrap()
+          margin-top 4px
+          color $color-text-d
+        }
+      }
+    }
+  }
+</style>
+
 ```
