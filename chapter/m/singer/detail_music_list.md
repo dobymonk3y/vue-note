@@ -190,5 +190,79 @@ script type="text/ecmascript-6">
 2. 所以我们需要另外一个层与容器背景颜色一致的，滚动的时候把这个层跟着滚动，看起来的效果就是这个列表往上移动了。
   
     为什么能让这个层跟着滚动还能做列表的背景呢？因为css样式，列表是position: fixed布局，top是js根据上面的背景图片部分计算出来的。所以是悬浮的。而层是普通的div元素。使用translate3d让div元素偏移。
+```
 
+```html
+<template>
+  <div class="music-list">
+    <div class="back">
+      <i class="icon-back"></i>
+    </div>
+    <h1 class="title" v-html="title"></h1>
+    <div class="bg-image" :style="bgStyle" ref="bgImage">
+      <div class="filter"></div>
+    </div>
+    <div class="bg-layer" ref="bgLayer"></div>
+    <scroll :data="songs" class="list" ref="list"
+            :listen-scroll="listenScroll"
+            :probe-type="probeType"
+            @scroll="listScroll"
+    >
+      <div class="song-list-wrapper">
+        <song-list :songs="songs"></song-list>
+      </div>
+    </scroll>
+  </div>
+</template>
+```
+```javascript
+    created () {
+      this.listenScroll = true  // 监听滚动事件
+      this.probeType = 3  // 滚动事件派发方式
+    },
+    mounted () {
+      // 因为这是一个scroll组件，所以要拿到el（dom元素）
+      // 为什么要动态计算高度呢？是因为背景图的高度是自适应的
+      let clientHeight = this.$refs.bgImage.clientHeight
+      this.$refs.list.$el.style.top = `${clientHeight}px`
+
+      // 记录两个值，背景图部分的高度
+      this.bgImageHeight = clientHeight
+      // 交互列表能偏移的最小高度是
+      this.minTranslateY = -(clientHeight - RESERVED_HEIGHT)
+    },
+    data () {
+      return {
+        scrollY: 0
+      }
+    },
+    methods: {
+      listScroll (pos) {
+        this.scrollY = pos.y
+      }
+    },
+    watch: {
+      scrollY (newY) {
+        // 当滚动到顶部距离 背景图片的高度剪掉我们要留出来的高度的时候就让背景层不滚动了
+        // 或则是根本就是手指往下滑动的时候，滚动到０的时候也就是原来没有滚动的样子，也不再滚动背景层了
+        //        let top = this.$refs.bgImage.clientHeight - 40
+        //        if (newY < -top || newY > 0) {
+        //          // 在不滚动的同时，我们还要把列表容器的overflow hidden加上，就不会让歌曲列表滚动到容器外部了
+        //          this.$refs.list.style['overflow'] = 'hidden'
+        //          return
+        //        }
+        /** --------------
+         * 上面说的思路直接作废:因为我们没有移动列表，只是让一个div层跟着滚动的,
+         * 所以：如果改变成overflow＝hidden，那么这个列表就又不能滚动到上面来了
+         * ---------- */
+
+        let translateY = Math.max(this.minTranslateY, newY)
+        if (translateY === this.minTranslateY || translateY === 0) {
+          return
+        }
+        // 让背景层跟着网上移动
+        this.$refs.bgLayer.style['transform'] = `translate3d(0,${translateY}px,0)`
+        console.log(newY)
+      }
+```
 
