@@ -123,3 +123,53 @@
   }
 </style>
 ```
+
+## 列表的页的引用
+引入 [歌手详情页-song-list组件的 - 编写列表组件 小节中的第一个版本列表](/chapter/m/singer/detail_song_list.md)
+因为还用到了滑动，所以还要引入基础组件的scroll组件
+
+```html
+.....
+<scroll :data="songs" class="list" ref="list">
+      <div class="song-list-wrapper">
+        <song-list :songs="songs"></song-list>
+      </div>
+    </scroll>
+```
+```javascript
+script type="text/ecmascript-6">
+  import SongList from 'base/song-list/song-list'
+  import Scroll from 'base/scroll/Scroll'
+
+  export default {
+    components: {
+      Scroll, SongList
+    },
+    ......
+    mounted () {
+      // 因为这是一个scroll组件，所以要拿到el（dom元素）
+      // 为什么要动态计算高度呢？是因为背景图的高度是自适应的
+      this.$refs.list.$el.style.top = `${this.$refs.bgImage.clientHeight}px`
+      console.log(this.$refs.list)
+    }
+```
+```css
+....
+ .list {
+      position: fixed
+      top: 0
+      bottom: 0
+      width: 100%
+      background: $color-background
+      overflow hidden
+      .song-list-wrapper {
+        padding: 20px 30px
+      }
+      .loading-container {
+        position: absolute
+        width: 100%
+        top: 50%
+        transform: translateY(-50%)
+      }
+    }
+```
