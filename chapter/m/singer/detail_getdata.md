@@ -6,6 +6,6 @@
 
 他们家的接口数据一般都是.fcg结尾的所以不是很难找。接口如下`https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&jsonpCallback=MusicJsonCallbacksinger_track&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&singermid=002J4UUk29y8BY&order=listen&begin=0&num=30&songstatus=1`
 
-数据列表通过jsonp请求到之后，我们需要对数据进行处理。
+数据列表通过jsonp请求到之后，我们需要对数据进行处理。（鉴于后面的多个模块都需要歌曲类的信息也应该进行抽象了）
 ## Song类的封装
 
