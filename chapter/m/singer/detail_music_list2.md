@@ -8,6 +8,8 @@
 2. 那么，当滚动到不再滚动的距离时，改变 背景图部分的z-index和背景图部分的高度
 3. 当可以滚动的时候，再重置回去
 
+总结：动画效果完全依赖css和js不断的改变
+
 ```javascript
 scrollY (newY) {
         let translateY = Math.max(this.minTranslateY, newY)
