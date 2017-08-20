@@ -23,9 +23,7 @@
     - [歌手详情页](chapter/m/singer/detail.md)
     - [歌手详情页-vuex](chapter/m/singer/detail_vuex.md)
     - [歌手详情页-歌手列表数据抓取](chapter/m/singer/detail_getdata.md)
-
-
-
+    - [歌手详情页-music-list组件](chapter/m/singer/detail_music_list.md)
 
 
 * [vue组件库开发](chapter/vu_components_lib/README.md)
