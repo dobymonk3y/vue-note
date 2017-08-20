@@ -61,12 +61,12 @@ export default class Song {
  * 在写其他模块的时候，发现其他模块获取到的数据结构都是一样的
  * <pre>
  *   "singer": [
- {
-   "id": 5062,
-   "mid": "002J4UUk29y8BY",
-   "name": "薛之谦"
- }
- ],
+ *    {
+ *      "id": 5062,
+ *      "mid": "002J4UUk29y8BY",
+ *      "name": "薛之谦"
+ *    }
+ *  ],
  * </pre>
  * @param musicData
  * @returns {Song}
