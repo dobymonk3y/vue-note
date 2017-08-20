@@ -25,6 +25,8 @@
     - [歌手详情页-歌手列表数据抓取](chapter/m/singer/detail_getdata.md)
     - [歌手详情页-music-list组件](chapter/m/singer/detail_music_list.md)
     - [歌手详情页-song-list组件](chapter/m/singer/detail_song_list.md)
+    - [歌手详情页-music-list组件2](chapter/m/singer/detail_music_list2.md)
+
 
 
 
