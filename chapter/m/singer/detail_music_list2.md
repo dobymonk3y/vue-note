@@ -172,3 +172,49 @@ export function prefixStyle (style) {
     this.$router.back()
   }   
 ```
+
+## 收尾 - 随机播放按钮
+![](/assets/musicapp/歌手详情列表随机播放全部按钮.png)
+
+看上图，在背景图的上面，所以dom卸载背景图部分
+```html
+ <div class="bg-image" :style="bgStyle" ref="bgImage">
+      <div class="play-wrapper">
+        <div class="play">
+          <i class="icon-play"></i>
+          <span class="text">随机播放全部</span>
+        </div>
+      </div>
+      <div class="filter" ref="filter"></div>
+    </div>
+```
+```css
+.play-wrapper {
+        position absolute
+        bottom 20px
+        z-index 50
+        width 100%
+        .play {
+          box-sizing border-box
+          border 1px solid $color-theme
+          width 135px
+          border-radius 100px
+          padding 7px 0
+          margin 0 auto //外部宽度百分白，内部宽度定死，然后 margin auto 水平居中
+          text-align center // 然后让内部的文字和图标居中
+          font-size 0
+          color: $color-theme
+          .icon-play {
+            display inline-block
+            vertical-align middle
+            margin-right 6px
+            font-size $font-size-medium-x
+          }
+          .text {
+            display inline-block
+            vertical-align middle
+            font-size $font-size-small
+          }
+        }
+      }
+```
