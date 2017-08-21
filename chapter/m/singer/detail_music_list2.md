@@ -99,3 +99,64 @@ watch: {
       }
     }
 ```
+
+## 优化 - css前缀
+
+在上面的过程中，在js里面写的css是不会经过vue-loader处理的，没有于处理器处理，那么用一些css属性的时候就要兼顾前缀，比较麻烦。接下来就用js来处理这个前缀；
+
+在什么浏览器下就用什么前缀（但是在这个测试用我看最后显示的还是用的标准的，不知道是为什么，但是代码中的确是没有错的）
+
+思路：
+
+1. 在js中创建一个div
+2. 检测这个div是否拥有指定的前缀属性
+3. 得到当前的浏览器css前缀，然后加工返回
+
+src/common/js/dom.js
+```javascript
+// 能力检测
+let elementStyle = document.createElement('div').style
+// 供应商,一个立即执行函数
+let vendor = (() => {
+  let transformNames = {
+    webkit: 'webkitTransform',
+    Moz: 'MozTransform',
+    ms: 'msTransform',
+    standard: 'transform'  // 标准
+  }
+
+  // 查看dom的style里面是否包含这个属性，包含则返回
+  for (let key in transformNames) {
+    if (elementStyle[transformNames[key]] !== undefined) {
+      return key
+    }
+  }
+  // 所有的前缀都不支持的话，就有问题了
+  return false
+})()
+
+export function prefixStyle (style) {
+  if (vendor === false) {
+    return false
+  }
+
+  if (vendor === 'standard') {
+    return style
+  }
+
+  // 加上前缀，首字母大写，比如：transform 加工之后返回 webkitTransform
+  return vendor + style.charAt(0).toUpperCase() + style.substr(1)
+}
+```
+
+使用处调用
+```javascript
+ import { prefixStyle } from 'common/js/dom'
+ 
+  const transform = prefixStyle('transform')
+  const backdropFilter = prefixStyle('backdrop-filter')
+  
+  
+  比如这个：
+  this.$refs.bgLayer.style[transform] = `translate3d(0,${translateY}px,0)`
+```
