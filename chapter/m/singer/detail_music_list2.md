@@ -176,7 +176,7 @@ export function prefixStyle (style) {
 ## 收尾 - 随机播放按钮
 ![](/assets/musicapp/歌手详情列表随机播放全部按钮.png)
 
-看上图，在背景图的上面，所以dom卸载背景图部分
+看上图，在背景图的上面，所以dom写在背景图部分
 ```html
  <div class="bg-image" :style="bgStyle" ref="bgImage">
       <div class="play-wrapper">
@@ -218,3 +218,10 @@ export function prefixStyle (style) {
         }
       }
 ```
+
+## 优化 - 按钮等待列表渲染完成后再渲染
+```html
+ <div class="play-wrapper" v-show="songs.length >0 ">
+```
+
+思路是，等待歌曲列表有数据后，再显示按钮
