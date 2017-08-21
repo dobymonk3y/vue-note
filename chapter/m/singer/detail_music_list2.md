@@ -228,4 +228,4 @@ export function prefixStyle (style) {
 
 ## 优化 - 按钮在列表滚动到顶部的时候样式错乱
 ![
-](/assets/music/歌手详情列表随机播放全部按钮滚动到顶部的时候样式错乱.png)
+](/assets/musicapp/歌手详情列表随机播放全部按钮滚动到顶部的时候样式错乱.png)
