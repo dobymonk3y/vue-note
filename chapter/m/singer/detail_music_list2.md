@@ -229,3 +229,27 @@ export function prefixStyle (style) {
 ## 优化 - 按钮在列表滚动到顶部的时候样式错乱
 ![
 ](/assets/musicapp/歌手详情列表随机播放全部按钮滚动到顶部的时候样式错乱.png)
+
+造成上面图片的原因是： 还记得我们在实现这里滚动交互效果的时候，滚动到顶部是修改了背景图片区域的容器高度，而这里的按钮又是一个绝对定位，背景图片容器是 position relative，所以这个按钮就会跑上去。
+
+要解决这个问题呢；我们在滚动到顶部的时候，让这个按钮消失，其他地方的时候就显示。
+
+这里为什么直接操作dom呢？上面为了按钮渲染的实际已经用了 v-show，所以这里就直接操作dom了
+```javascript
+        if (translateY === this.minTranslateY) {
+          let bgImageStyle = this.$refs.bgImage.style
+          bgImageStyle['padding-top'] = 0
+          bgImageStyle['height'] = `${RESERVED_HEIGHT}px`
+          zindex = 10
+          this.$refs.playBtn.style.display = 'none'
+        } else {
+          // 让背景层跟着网上移动
+          this.$refs.bgLayer.style[transform] = `translate3d(0,${translateY}px,0)`
+          let bgImageStyle = this.$refs.bgImage.style
+          bgImageStyle['padding-top'] = `70%`
+          bgImageStyle['height'] = 0
+          zindex = 0
+          
+          this.$refs.playBtn.style.display = ''
+        }
+```
