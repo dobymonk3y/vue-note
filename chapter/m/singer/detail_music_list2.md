@@ -160,3 +160,15 @@ export function prefixStyle (style) {
   比如这个：
   this.$refs.bgLayer.style[transform] = `translate3d(0,${translateY}px,0)`
 ```
+
+## 收尾 - 返回按钮
+```javascript
+ <div class="back" @click="back">
+      <i class="icon-back"></i>
+    </div>
+    
+ // 直接使用路由提供的返回即可   
+ back () {
+    this.$router.back()
+  }   
+```
