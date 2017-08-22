@@ -108,4 +108,10 @@ export const currentIndex = state => state.currentIndex
 ```javascript
 ```
 
+在action中可以封装对多个mutations的提交，也可以提交异步数据
+**src/store/action.js**
+```javascript
+```
+
+
             
