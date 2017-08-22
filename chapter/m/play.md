@@ -74,5 +74,22 @@ export const playMode = {
   loop: 1,
   random: 2
 }
-```       
+```   
+
+状态数据有了。接下来我们要写怎么获取数据，也就是 getters
+
+**src/store/getters.js**
+```javascript
+/** 用于获取数据 */
+
+export const singer = state => state.singer
+
+export const playing = state => state.playing
+export const fullScreen = state => state.fullScreen
+export const playlist = state => state.playlist
+export const sequenceList = state => state.sequenceList
+export const mode = state => state.mode
+export const currentIndex = state => state.currentIndex
+
+```    
             
