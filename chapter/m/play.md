@@ -101,6 +101,14 @@ export const currentIndex = state => state.currentIndex
 
 **src/store/mutations-types.js**
 ```javascript
+export const SET_SINGER = 'SET_SINGER'
+
+export const SET_PLAYING = 'SET_PLAYING'
+export const SET_FULL_SCREEN = 'SET_FULL_SCREEN'
+export const SET_PLAYLIST = 'SET_PLAYLIST'
+export const SET_SEQUENCE_LIST = 'SET_SEQUENCE_LIST'
+export const SET_MODE = 'SET_MODE'
+export const SET_CURRENT_INDEX = 'SET_CURRENT_INDEX'
 ```
 
 在mutations中可以提交非异步的数据。
