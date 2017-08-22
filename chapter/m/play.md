@@ -78,6 +78,8 @@ export const playMode = {
 
 状态数据有了。接下来我们要写怎么获取数据，也就是 getters
 
+getters中对获取数据做一个简单的封装，也相当于一个计算属性
+
 **src/store/getters.js**
 ```javascript
 /** 用于获取数据 */
@@ -92,4 +94,18 @@ export const mode = state => state.mode
 export const currentIndex = state => state.currentIndex
 
 ```    
+
+能获取数据了，那么怎么修改数据呢？ 编写 mutations
+
+在编写mutations之前，为了方便获取和操作方法，把方法名定义常量type
+
+**src/store/mutations-types.js**
+```javascript
+```
+
+在mutations中可以提交非异步的数据。
+**src/store/mutations.js**
+```javascript
+```
+
             
