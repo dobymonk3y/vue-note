@@ -78,7 +78,7 @@ export const playMode = {
 
 状态数据有了。接下来我们要写怎么获取数据，也就是 getters
 
-getters中对获取数据做一个简单的封装，也相当于一个计算属性
+getters中对获取数据做一个简单的封装（也可以做一些复杂的计算），也相当于一个计算属性
 
 **src/store/getters.js**
 ```javascript
