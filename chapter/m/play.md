@@ -114,6 +114,31 @@ export const SET_CURRENT_INDEX = 'SET_CURRENT_INDEX'
 在mutations中可以提交非异步的数据。
 **src/store/mutations.js**
 ```javascript
+import * as types from './mutations-types'
+
+const mutations = {
+  [types.SET_SINGER] (state, singer) {
+    state.singer = singer
+  },
+  [types.SET_PLAYING] (state, playing) {
+    state.playing = playing
+  },
+  [types.SET_FULL_SCREEN] (state, fullScreen) {
+    state.fullScreen = fullScreen
+  },
+  [types.SET_PLAYLIST] (state, playlist) {
+    state.playlist = playlist
+  },
+  [types.SET_SEQUENCE_LIST] (state, sequenceList) {
+    state.sequenceList = sequenceList
+  },
+  [types.SET_MODE] (state, mode) {
+    state.mode = mode
+  },
+  [types.SET_CURRENT_INDEX] (state, currentIndex) {
+    state.currentIndex = currentIndex
+  }
+}
 ```
 
 在action中可以封装对多个mutations的提交，也可以提交异步数据，但是这里暂时还用不上，等待编写细节的时候如有用到再添加。
