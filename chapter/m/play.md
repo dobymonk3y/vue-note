@@ -224,7 +224,7 @@ const mutations = {
 
 在App中引用
 **src/App.vue**
-``javascript
+```javascript
 <template>
   <div id="app">
     <m-header></m-header>
