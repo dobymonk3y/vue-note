@@ -276,6 +276,22 @@ const mutations = {
 
 由于这里第二步骤，控制播放器而修改状态的时候要提交多个mutations，所以这里使用action来封装这个操作
 
+**src/store/action.js**
+```javascript
+import * as types from './mutations-types'
+
+// 官方语法 https://vuex.vuejs.org/zh-cn/actions.html
+export const selectPlay = function ({commit, state}, {list, index}) {
+  // 先暂时播放列表和排序列表一致
+  // 且 打开全屏播放器模式，并且设置为播放状态
+  commit(types.SET_SEQUENCE_LIST, list)
+  commit(types.SET_PLAYLIST, list)
+  commit(types.SET_CURRENT_INDEX, index)
+  commit(types.SET_FULL_SCREEN, true)
+  commit(types.SET_PLAYING, true)
+}
+```
+
   
         
 
