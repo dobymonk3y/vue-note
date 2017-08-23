@@ -292,6 +292,31 @@ export const selectPlay = function ({commit, state}, {list, index}) {
 }
 ```
 
+在music-list中使用action提交
+
+**src/components/music-list/music-list.vue**
+
+
+```javascript
+// 使用语法糖
+
+  // node_modules/vuex/types/helpers.d.ts 在这个文件中 有语法糖的名称
+  import { mapActions } from 'vuex'
+  export default {
+      methods: {
+      ...mapActions([
+        'selectPlay'
+      ]),
+      selectItem (item, index) {
+      // 这里提交的时候 一定要提交对象，因为只能提交一个参数
+        this.selectPlay({
+          list: this.songs,
+          index
+        })
+      }
+  }
+```
+
   
         
 
