@@ -296,7 +296,7 @@ export const selectPlay = function ({commit, state}, {list, index}) {
 
 **src/components/music-list/music-list.vue**
 
-
+在song-list组件上使用selectItem 监听点击事件。并调用actions
 ```javascript
 // 使用语法糖
 
