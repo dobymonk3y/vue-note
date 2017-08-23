@@ -155,8 +155,103 @@ const mutations = {
 2. 这个骨架组件在哪里引用？才能被多个入口控制呢？
   
   由于该组件被多个入口控制，就说明这个也是一个全局的，那么放在App.vue中，其他入口控制 根据改变vuex中的数据来控制播放器的行为。
-  
-  
+
+> ## 从这一张开始，先看完视频然后再靠着记忆和理解，完成本章节所展示的内容。包括css。 下一章节肯定会对这一章节进行大量的修改，这些都不要紧。有思路就好
+
+
+由于这个是一个业务组件，先建立初始的框架页面
+**src/components/player/player.vue   **
+
+初始架子所要做的功能就是：
+
+1. 有播放列表的时候才显示播放组件
+2. 此时播放器是全屏还是迷你 
+
+
+```html
+<template>
+  <!--主要分为两大块内容：1. 全屏播放器 2， 迷你播放器-->
+  <div class="player" v-show="playlist.length >0">
+    <div class="normal-player" v-show="fullScreen">
+      播放器
+    </div>
+    <div class="mini-player" v-show="!fullScreen">
+      迷你播放器
+    </div>
+  </div>
+</template>
+```
+```javascript
+<script type="text/ecmascript-6">
+  import { mapGetters } from 'vuex'
+
+  export default {
+    data () {
+      return {}
+    },
+    computed: {
+      ...mapGetters([
+        'fullScreen',
+        'playlist'
+      ])
+    }
+  }
+</script>
+```
+```css
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "~common/stylus/variable"
+  @import "~common/stylus/mixin"
+
+  .player {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background $color-background
+    .mini-player {
+      position absolute
+      bottom 0
+      right 0
+      left 0
+      height 60px
+      background $color-highlight-background
+    }
+  }
+</style>
+```     
+
+在App中引用
+**src/App.vue**
+``javascript
+<template>
+  <div id="app">
+    <m-header></m-header>
+    <tab></tab>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    <player></player>
+  </div>
+</template>
+
+<script>
+  // 组件首字母大写，因为组件以css命名的
+  import MHeader from 'components/m-header/m-header'
+  import Tab from 'components/tab/tab'
+
+  import Player from 'components/player/player'
+
+  export default {
+    name: 'app',
+    components: {MHeader, Tab, Player},
+    data () {
+      return {}
+    }
+  }
+</script>
+```  
   
 
             
