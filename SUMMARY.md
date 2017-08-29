@@ -28,9 +28,7 @@
     - [歌手详情页-music-list组件2](chapter/m/singer/detail_music_list2.md)
   * [播放器组件](chapter/m/play.md)
     - [播放器基础样式以](chapter/m/play/1.md)
-
-
-
+    - [歌曲数据应用](chapter/m/play/2.md)
 
 
 * [vue组件库开发](chapter/vu_components_lib/README.md)
