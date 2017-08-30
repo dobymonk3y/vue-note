@@ -29,6 +29,8 @@
   * [播放器组件](chapter/m/play.md)
     - [播放器基础样式以](chapter/m/play/1.md)
     - [歌曲数据应用](chapter/m/play/2.md)
+    - [展开收起动画](chapter/m/play/3.md)
+
 
 
 * [vue组件库开发](chapter/vu_components_lib/README.md)
