@@ -27,12 +27,10 @@
     * [歌手详情页-song-list组件](chapter/m/singer/detail_song_list.md)
     * [歌手详情页-music-list组件2](chapter/m/singer/detail_music_list2.md)
   * [播放器组件](chapter/m/play.md)
-    - [播放器基础样式以](chapter/m/play/1.md)
-    - [歌曲数据应用](chapter/m/play/2.md)
-    - [展开收起动画（基础css）](chapter/m/play/3.md)
-    - [展开收起动画（JS）](chapter/m/play/4.md)
-
-
+    * [播放器基础样式以](chapter/m/play/1.md)
+    * [歌曲数据应用](chapter/m/play/2.md)
+    * [展开收起动画（css类名）](chapter/m/play/3.md)
+    * [展开收起动画（JavaScript 钩子）](chapter/m/play/4.md)
 
 ---
 
