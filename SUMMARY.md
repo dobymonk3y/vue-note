@@ -32,6 +32,11 @@
     - [展开收起动画（css类名）](chapter/m/play/3.md)
     - [展开收起动画（JavaScript 钩子）](chapter/m/play/4.md)
     - [播放功能](chapter/m/play/5.md)
+    - [进度条组件](chapter/m/play/6.md)
+
+
+
+
 
 
 
