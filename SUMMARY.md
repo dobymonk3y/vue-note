@@ -48,3 +48,5 @@
   * [环境搭建-单独css打包配置](chapter/vu_components_lib/build_dev_env_css.md)
   * [环境搭建-npm上传配置教程](chapter/vu_components_lib/build_dev_env_npm.md)
 
+---
+* [vuex](chapter/vux/README.md)
