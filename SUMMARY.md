@@ -27,18 +27,12 @@
     * [歌手详情页-song-list组件](chapter/m/singer/detail_song_list.md)
     * [歌手详情页-music-list组件2](chapter/m/singer/detail_music_list2.md)
   * [播放器组件](chapter/m/play.md)
-    - [播放器基础样式以](chapter/m/play/1.md)
-    - [歌曲数据应用](chapter/m/play/2.md)
-    - [展开收起动画（css类名）](chapter/m/play/3.md)
-    - [展开收起动画（JavaScript 钩子）](chapter/m/play/4.md)
-    - [播放功能](chapter/m/play/5.md)
-    - [进度条组件](chapter/m/play/6.md)
-
-
-
-
-
-
+    * [播放器基础样式以](chapter/m/play/1.md)
+    * [歌曲数据应用](chapter/m/play/2.md)
+    * [展开收起动画（css类名）](chapter/m/play/3.md)
+    * [展开收起动画（JavaScript 钩子）](chapter/m/play/4.md)
+    * [播放功能](chapter/m/play/5.md)
+    * [进度条组件\(条形\)](chapter/m/play/6.md)
 
 ---
 
@@ -49,4 +43,6 @@
   * [环境搭建-npm上传配置教程](chapter/vu_components_lib/build_dev_env_npm.md)
 
 ---
+
 * [vuex](chapter/vux/README.md)
+
