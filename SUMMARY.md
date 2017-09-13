@@ -35,6 +35,7 @@
     - [进度条组件（条形）](chapter/m/play/6.md)
     - [进度条组件（圆形）](chapter/m/play/7.md)
     - [播放模式切换](chapter/m/play/8.md)
+    - [歌词数据抓取与解析](chapter/m/play/9.md)
 
 
 
