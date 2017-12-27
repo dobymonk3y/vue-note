@@ -31,6 +31,8 @@ Run -> Edit Configurations -> + -> npm
 有些版本的WebStorm没有打开EsLint的选项。需要经过以下方式打开：
 ![](/assets/image/eslint-config.png)
 
+特别注意的是：有些版本或则有时候抽风配置后能检测到，但是格式化的时候不能按照eslint的规则进行格式化，那么可以看看以前可以格式化项目的 `\.idea\codeStyles\Project.xml` 文件中的 `JSCodeStyleSettings` 和 `codeStyleSettings` 中是否有相关的配置。 暂时我还没有搞清楚为什么有时候有效果有时候没有
+
 ## 分号
 打开以后的最明显的效果就是：以上的默认规则是 不需要分号的。 使用代码格式化后，会自动把分号都去掉！！听说在官网规则中有小扳手图标的都能自动按规则修复。
 
