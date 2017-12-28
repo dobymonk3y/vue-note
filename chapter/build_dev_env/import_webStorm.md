@@ -33,6 +33,38 @@ Run -> Edit Configurations -> + -> npm
 
 **特别注意的是：**有些版本或则有时候抽风配置后能检测到，但是格式化的时候不能按照eslint的规则进行格式化，那么可以看看以前可以格式化项目的 `\.idea\codeStyles\Project.xml` 文件中的 `JSCodeStyleSettings` 和 `codeStyleSettings` 中是否有相关的配置。 暂时我还没有搞清楚为什么有时候有效果有时候没有
 
+这是一个基础环境搭建后，被正确读取出来的配置；包含了下面的设置成2个空格的配置。其他的都是自动读取的。
+如果你的webStorm没有自动读取，并且格式化不会按照eslint规范来格式化，可以尝试覆盖这个文件（如果没有则新建）
+```xml
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <JSCodeStyleSettings>
+      <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="SPACE_BEFORE_GENERATOR_MULT" value="true" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="SPACES_WITHIN_IMPORTS" value="true" />
+    </JSCodeStyleSettings>
+    <MarkdownNavigatorCodeStyleSettings>
+      <option name="RIGHT_MARGIN" value="72" />
+    </MarkdownNavigatorCodeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
+      <option name="TERNARY_OPERATION_SIGNS_ON_NEXT_LINE" value="true" />
+      <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+      <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+  </code_scheme>
+</component>
+```
+
 ## 分号
 打开以后的最明显的效果就是：以上的默认规则是 不需要分号的。 使用代码格式化后，会自动把分号都去掉！！听说在官网规则中有小扳手图标的都能自动按规则修复。
 
