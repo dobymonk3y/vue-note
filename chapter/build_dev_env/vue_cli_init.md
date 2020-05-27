@@ -1,5 +1,5 @@
 # 初始化项目脚手架
-## vue-lic 安装
+## vue-cli 安装
 
   参考官网：https://github.com/vuejs/vue-cli
 ## 查看vue-cli 支持有
